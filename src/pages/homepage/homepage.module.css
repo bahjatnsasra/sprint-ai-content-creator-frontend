@@ -3,11 +3,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100dvh;
 }
 
 .btn{
-    background-color: blueviolet;
+    margin-top: 50px;
+    background-color: #946AB3;
+    border: none;
+    color: white;
     border-radius: 20px;
     padding: 20px;
-    font-size: 30px;
+    font-size: 34px;
+    font-weight: 600;
+    width: 280px;
+    height: 95px;
+}
+
+.img{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
 }
