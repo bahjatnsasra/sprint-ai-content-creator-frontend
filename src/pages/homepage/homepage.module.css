@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    background-color: blueviolet;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 30px;
+}
