@@ -5,6 +5,7 @@ import UnderButtons from '../../components/underButtons/underButtons'
 
 const ChooseSubject = () => {
     const [selectedButton, setSelectedButton] = useState(2);
+    const [subject, setSubject] = useState();
 
     const handleButtonClick = (buttonIndex) => {
         setSelectedButton(buttonIndex);
@@ -14,7 +15,7 @@ const ChooseSubject = () => {
         <React.Fragment>
             <Navbar />
             <div className={styles.container}>
-                <img className={styles.img} src="/choose_subject.svg" alt="image" />
+                <img className={styles.img} src="/procces1.svg" alt="image" />
                 <label className={styles.title}>נתחיל בבחירת נושא למסלול</label>
 
                 <div className={styles.buttons_container}>
@@ -24,6 +25,7 @@ const ChooseSubject = () => {
                     >
                         יש לי רעיון לנושא
                     </button>
+
                     <button
                         className={`${styles.btn} ${selectedButton === 2 ? styles.selected : ''}`}
                         onClick={() => handleButtonClick(2)}
@@ -36,13 +38,16 @@ const ChooseSubject = () => {
                     selectedButton !== 2 ?
                         <div className={styles.your_subject_container}>
                             <label>מה הנושא שלך ?</label>
-                            <input placeholder='יצירת תמונות באמצעות בינה מלאכותית'></input>
+                            <input onChange={(event) => setSubject(event.target.value)} placeholder='יצירת תמונות באמצעות בינה מלאכותית' />
                         </div>
                     : 
                     null
                 }
             </div>
-            <UnderButtons className={styles.underBtn}/>
+
+            <div className={styles.underBtn}>
+                <UnderButtons subject={subject} back='/' forward='/genaratedSubjects'/>
+            </div>
         </React.Fragment>
     );
 };
