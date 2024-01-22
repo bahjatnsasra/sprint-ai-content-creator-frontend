@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Assistant', sans-serif;
 }
 
 .img{
@@ -10,11 +11,11 @@
 }
 
 .title{
-    margin-top: 140px;
+    margin-top: 100px;
     color: #946AB3;
     font-weight: 600;
     font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Assistant', sans-serif;
 }
 
 .buttons_container{
@@ -37,6 +38,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     cursor: pointer;
+    font-family: 'Assistant', sans-serif;
 }
 .btn:hover{
     background-color: rgba(243, 242, 247, 0.478);
@@ -70,4 +72,10 @@
     padding: 12px;
     border: 2px solid rgba(197, 197, 197, 0.327);
     width: 400px;
+    font-family: 'Assistant', sans-serif;
+}
+
+.underBtn{
+    position: absolute;
+    bottom: 20px;
 }

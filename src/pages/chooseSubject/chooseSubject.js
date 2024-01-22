@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './chooseSubject.module.css';
 import Navbar from '../../components/navbar/navbar';
+import UnderButtons from '../../components/underButtons/underButtons'
 
 const ChooseSubject = () => {
     const [selectedButton, setSelectedButton] = useState(2);
@@ -41,6 +42,7 @@ const ChooseSubject = () => {
                     null
                 }
             </div>
+            <UnderButtons className={styles.underBtn}/>
         </React.Fragment>
     );
 };

@@ -18,12 +18,11 @@
     font-weight: 600;
     width: 280px;
     height: 95px;
+    cursor: pointer;
 }
 
 .img{
     position: absolute;
     bottom: 0px;
     left: 0px;
-    width: 600px;
-    height: 600px;
 }
