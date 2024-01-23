@@ -65,7 +65,7 @@ const GenaratedSubjects = () => {
             <Navbar />
             <div className={styles.container}>
 
-                <img className={styles.img} src="/choose_subject.svg" alt="image" />
+                <img className={styles.img} src="/process2.svg" alt="image" />
 
                 <label className={styles.title}>בחירת תחום כללי לנושא</label>
 
@@ -84,7 +84,7 @@ const GenaratedSubjects = () => {
             </div>
 
             <div className={styles.underBtn}>
-                <UnderButtons subject={subject} back='/chooseSubject' forward='/'/>
+                <UnderButtons subject={subject} back='/chooseSubject' forward='/loadingPage'/>
             </div>
         </React.Fragment>
     );

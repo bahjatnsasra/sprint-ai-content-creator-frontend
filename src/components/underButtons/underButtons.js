@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import styels from './underButtons.module.css'
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
@@ -6,6 +7,10 @@ import { useNavigate } from "react-router-dom";
 const UnderButtons = (props) => {
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        console.log(props.forward)
+    }, [props.forward])
 
     return <div className={styels.container}>
 
