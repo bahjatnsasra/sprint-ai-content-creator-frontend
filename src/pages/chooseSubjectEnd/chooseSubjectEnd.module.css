@@ -11,30 +11,24 @@
 }
 
 .title{
-    margin-top: 50px;
+    margin-top: 70px;
     color: #946AB3;
     font-weight: 600;
     font-size: 40px;
     font-family: 'Assistant', sans-serif;
 }
 
-.options_label{
-    color: #621E8A;
-    font-size: 24px;
+.top_container_buttons{
     direction: rtl;
-    margin-right: 20px;
 }
 
 .buttons_container{
-    margin-top: 10px;
-    gap: 15px;
+    margin-top: 30px;
+    gap: 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     direction: rtl;
-}
-
-.row2{
-    margin-top: -10px;
+    justify-content: right;
 }
 
 .btn{
@@ -44,13 +38,12 @@
     border-radius: 20px;
     border: none;
     padding: 20px;
-    width: 200px;
-    height: 150px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 350px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     cursor: pointer;
     font-family: 'Assistant', sans-serif;
-    margin: 5px;
 }
 .btn:hover{
     background-color: rgba(243, 242, 247, 0.478);
@@ -58,8 +51,8 @@
 }
 
 .more_option_btn{
-    margin-right: 15px;
-    margin-top: 15px;
+    margin-right: 10px;
+    margin-top: 25px;
     color: gray;
     border: none;
     padding: 20px;

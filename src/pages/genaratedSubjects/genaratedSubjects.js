@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './genaratedSubjects.module.css';
 import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons'
+import { GoSync } from "react-icons/go";
 
 const GenaratedSubjects = () => {
 
@@ -79,12 +80,17 @@ const GenaratedSubjects = () => {
                     <div className={styles.row2}>
                         {renderButtons2()}
                     </div>
+
+                    <button className={styles.more_option_btn}>
+                        <label>הצעות נוספות</label>
+                        <GoSync></GoSync>
+                    </button>
                 </div>
 
             </div>
 
             <div className={styles.underBtn}>
-                <UnderButtons subject={subject} back='/chooseSubject' forward='/loadingPage'/>
+                <UnderButtons subject={subject} back='/chooseSubject' forward='/chooseSubjectEnd'/>
             </div>
         </React.Fragment>
     );
