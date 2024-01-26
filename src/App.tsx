@@ -5,6 +5,7 @@ import ChooseSubject from './pages/chooseSubject/chooseSubject';
 import GenaratedSubjects from './pages/genaratedSubjects/genaratedSubjects';
 import LoadingPage from './pages/loadingPage1/loadingPage';
 import ChooseSubjectEnd from './pages/chooseSubjectEnd/chooseSubjectEnd';
+import HomePageCreatePath from './pages/homePageCreatePath/homePageCreatePath';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/genaratedSubjects" element={<GenaratedSubjects/>} />
         <Route path="/loadingPage" element={<LoadingPage/>} />
         <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd/>} />
+        <Route path="/homePageCreatePath" element={<HomePageCreatePath/>} />
       </Routes>
     </Router>
   );
