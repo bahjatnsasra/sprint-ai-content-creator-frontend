@@ -23,7 +23,7 @@ const ChooseSubjectEnd = (props) => {
         <React.Fragment>
             <Navbar />
             <div className={styles.container}>
-                <img className={styles.img} src="/procces1.svg" alt="image" />
+                <img className={styles.img} src="/procces2.svg" alt="image" />
                 <label className={styles.title}>נושאים בנושא {subject}</label>
 
                 <div className={styles.top_container_buttons}>

@@ -18,7 +18,7 @@ const HomePageCreatePath = (props) => {
         <React.Fragment>
             <Navbar />
             <div className={styles.container}>
-                <img className={styles.img} src="/procces1.svg" alt="image" />
+                <img className={styles.img} src="/procces2.svg" alt="image" />
 
                 <div className={styles.container_data}>
                     <img className={styles.text_img} src="/text2.svg" alt="image" />

@@ -66,7 +66,7 @@ const GenaratedSubjects = (props) => {
             <Navbar />
             <div className={styles.container}>
 
-                <img className={styles.img} src="/process2.svg" alt="image" />
+                <img className={styles.img} src="/procces2.svg" alt="image" />
 
                 <label className={styles.title}>בחירת תחום כללי לנושא</label>
 

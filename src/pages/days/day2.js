@@ -1,18 +1,17 @@
-import styles from './structurePage.module.css';
+import styles from '../structurePage/structurePage.module.css';
 import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons';
 import PathData from '../../components/pathData/pathData';
 
-const StructurePage = () => {
+const Day2 = () => {
 
     return <div className={styles.all_page_container}>
         <Navbar className={styles.navbar}/>
 
-        <img className={styles.img} src="/procces3.svg" alt="image" />
+        <img className={styles.img} src="/day2.svg" alt="image" />
 
         <div className={styles.container}>
-            <h2>מתווה למסלול</h2>
-            <label>בנושא subject</label>
+            <h2 style={{marginBottom: '20px'}}>צפו ביום השני</h2>
 
             <PathData data='האם אתה אוהב Cheese Whiz? שיזוף בהתזה? ריסים מלאכותיים? זה מה שהוא לורם איפסום בעיני רבים - הוא משפשף אותם בדרך הלא נכונה, כל הדרך. זה לא אמיתי, מוזר, גורם לך לתהות אם משהו לא בסדר, נראה שהוא מחפש את תשומת הלב שלך מכל הסיבות הלא נכונות. בדרך כלל, אנחנו מעדיפים את הדבר האמיתי, יין ללא חומרים משמרים מבוססי גופרית, חמאה אמיתית, לא מרגרינה, ולכן היינו רוצים שהפריסות והעיצובים שלנו יהיו מלאים במילים אמיתיות, עם מחשבות שחשובות, מידע שיש לו ערך.
 התוספות שאולי בחרת לאותה פרוסת פיצה לארוחת ערב בטלוויזיה כששכחת לקנות מאכלים, הצבע שאתה עשוי להטיח על הפנים שלך כדי להרשים את הבוס החדש הוא העסק שלך. אבל מה עם הלחם היומי שלך? עיצוב קומפוזיציות, פריסות, מסגרות wireframes - האם הלקוחות שלך יסכימו שאתה מתנהל בצורה קלה? הרשויות בעסק שלנו יגידו במילים לא ברורות שלורם איפסום היא כל כך ענקית, ענקית, אין לא לא לוותר לנצח. לא כל כך מהר, הייתי אומר, ישנם כמה גורמים גואלים לטובת טקסט יווני, מכיוון שהשימוש בו הוא רק סימפטום לבעיה גרועה יותר שיש לקחת בחשבון.
@@ -34,10 +33,10 @@ const StructurePage = () => {
         </div>
 
         <div className={styles.underBtn}>
-                <UnderButtons text='ליצירת היום הראשון' back='/homePageCreatePath' forward='/day1'/>
+                <UnderButtons text='ליצירת היום השלישי' back='/day1' forward='/day3'/>
             </div>
 
         </div>
 };
 
-export default StructurePage;
+export default Day2;

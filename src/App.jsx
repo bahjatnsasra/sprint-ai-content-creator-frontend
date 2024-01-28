@@ -8,6 +8,11 @@ import LoadingPage from './pages/loadingPage1/loadingPage';
 import ChooseSubjectEnd from './pages/chooseSubjectEnd/chooseSubjectEnd';
 import HomePageCreatePath from './pages/homePageCreatePath/homePageCreatePath';
 import StructurePage from './pages/structurePage/structurePage';
+import Day1 from './pages/days/day1';
+import Day2 from './pages/days/day2';
+import Day3 from './pages/days/day3';
+import Day4 from './pages/days/day4';
+import Day5 from './pages/days/day5';
 
 
 function App() {
@@ -30,6 +35,13 @@ function App() {
         <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd mainObj = {mainObj} updateMainObj = {updateMainObj}/>} />
         <Route path="/homePageCreatePath" element={<HomePageCreatePath mainObj = {mainObj}/>} />
         <Route path="/structurePage" element={<StructurePage/>} />
+
+        <Route path="/day1" element={<Day1/>} />
+        <Route path="/day2" element={<Day2/>} />
+        <Route path="/day3" element={<Day3/>} />
+        <Route path="/day4" element={<Day4/>} />
+        <Route path="/day5" element={<Day5/>} />
+        
       </Routes>
     </Router>
   );
