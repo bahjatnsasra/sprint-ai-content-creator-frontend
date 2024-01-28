@@ -4,13 +4,14 @@ import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons'
 import { GoSync } from "react-icons/go";
 
-const GenaratedSubjects = () => {
+const GenaratedSubjects = (props) => {
 
     const [subject, setSubject] = useState();
     const [lastClickedButton, setLastClickedButton] = useState(null);
-
+    
     useEffect(() => {
         console.log(subject)
+        props.updateMainObj(subject,'')
     }, [subject])
 
     const renderButtons = () => {

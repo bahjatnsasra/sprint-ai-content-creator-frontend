@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './chooseSubjectEnd.module.css';
 import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons'
@@ -11,6 +11,10 @@ const ChooseSubjectEnd = (props) => {
     const handleButtonClick = (buttonIndex) => {
         setSelectedButton(buttonIndex);
     };
+
+    useEffect(() => {
+        console.log(props.mainObj);
+    }, [])
 
     return (
         <React.Fragment>

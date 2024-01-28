@@ -6,16 +6,26 @@ import GenaratedSubjects from './pages/genaratedSubjects/genaratedSubjects';
 import LoadingPage from './pages/loadingPage1/loadingPage';
 import ChooseSubjectEnd from './pages/chooseSubjectEnd/chooseSubjectEnd';
 import HomePageCreatePath from './pages/homePageCreatePath/homePageCreatePath';
+import { useState } from 'react';
 
 function App() {
-  return (
+  const [mainObj, setMainObj] = useState({sub1: '' , sub2: ''})
+
+  function updateMainObj(sub1, sub2) {
+    const newMainObj = {...mainObj}
+    if(sub1) {newMainObj.sub1 = sub1}
+    if(sub2) {newMainObj.sub2 = sub2}
+    setMainObj(newMainObj)
+  }
+
+  return (  
     <Router>
       <Routes>
         <Route path="/" element={<Homepage/>} />
         <Route path="/chooseSubject" element={<ChooseSubject/>} />
-        <Route path="/genaratedSubjects" element={<GenaratedSubjects/>} />
-        <Route path="/loadingPage" element={<LoadingPage/>} />
-        <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd/>} />
+        <Route path="/genaratedSubjects" element={<GenaratedSubjects updateMainObj = {updateMainObj}/> } />
+        <Route path="/loadingPage" element={<LoadingPage mainObj = {mainObj} />} />
+        <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd mainObj = {mainObj}/>} />
         <Route path="/homePageCreatePath" element={<HomePageCreatePath/>} />
       </Routes>
     </Router>
