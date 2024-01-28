@@ -10,7 +10,6 @@ const GenaratedSubjects = (props) => {
     const [lastClickedButton, setLastClickedButton] = useState(null);
     
     useEffect(() => {
-        console.log(subject)
         props.updateMainObj(subject,'')
     }, [subject])
 

@@ -8,10 +8,6 @@ const UnderButtons = (props) => {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        console.log(props.forward)
-    }, [props.forward])
-
     return <div className={styels.container}>
 
             <button onClick={() => navigate(props.forward)} className={styels.move_btn}>

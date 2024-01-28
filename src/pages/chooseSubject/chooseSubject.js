@@ -46,7 +46,11 @@ const ChooseSubject = () => {
             </div>
 
             <div className={styles.underBtn}>
-                <UnderButtons subject={subject} back='/' forward='/genaratedSubjects'/>
+                {selectedButton === 2 ?
+                    <UnderButtons subject={subject} back='/' forward='/genaratedSubjects'/>
+                    :
+                    <UnderButtons subject={subject} back='/' forward='/homePageCreatePath'/>
+                }
             </div>
         </React.Fragment>
     );
