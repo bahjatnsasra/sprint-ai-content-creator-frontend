@@ -75,6 +75,10 @@
     font-family: 'Assistant', sans-serif;
 }
 
+.error{
+    border: 2px solid red;
+}
+
 .underBtn{
     position: absolute;
     bottom: 0px;
