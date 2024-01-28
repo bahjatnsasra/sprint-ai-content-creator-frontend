@@ -25,8 +25,8 @@ function App() {
         <Route path="/chooseSubject" element={<ChooseSubject/>} />
         <Route path="/genaratedSubjects" element={<GenaratedSubjects updateMainObj = {updateMainObj}/> } />
         <Route path="/loadingPage" element={<LoadingPage mainObj = {mainObj} />} />
-        <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd mainObj = {mainObj}/>} />
-        <Route path="/homePageCreatePath" element={<HomePageCreatePath/>} />
+        <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd mainObj = {mainObj} updateMainObj = {updateMainObj}/>} />
+        <Route path="/homePageCreatePath" element={<HomePageCreatePath mainObj = {mainObj}/>} />
       </Routes>
     </Router>
   );

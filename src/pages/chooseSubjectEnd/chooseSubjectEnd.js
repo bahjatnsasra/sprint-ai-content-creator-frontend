@@ -16,6 +16,7 @@ const ChooseSubjectEnd = (props) => {
     useEffect(() => {
         setSubject(props.mainObj.sub1)
         console.log(realSubject)
+        props.updateMainObj('',realSubject)
     }, [realSubject])
 
     return (

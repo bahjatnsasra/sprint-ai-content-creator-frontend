@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './homePageCreatePath.module.css';
 import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons'
 
-const HomePageCreatePath = () => {
+const HomePageCreatePath = (props) => {
+
+    const [subject, setSubject] = useState(props.mainObj.sub2);
 
     return (
         <React.Fragment>
@@ -16,7 +18,7 @@ const HomePageCreatePath = () => {
 
                     <div className={styles.input_container}>
                         <label>נושא</label>
-                        <input type='text'></input>
+                        <input type='text' value={subject} onChange={(event) => {setSubject(event.target.value)}}></input>
 
                         <label>מטרות המסלול</label>
                         <input type='text'></input>
