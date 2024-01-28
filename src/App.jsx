@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import './App.css';
 import Homepage from './pages/homepage/homepage';
 import ChooseSubject from './pages/chooseSubject/chooseSubject';
@@ -6,7 +7,8 @@ import GenaratedSubjects from './pages/genaratedSubjects/genaratedSubjects';
 import LoadingPage from './pages/loadingPage1/loadingPage';
 import ChooseSubjectEnd from './pages/chooseSubjectEnd/chooseSubjectEnd';
 import HomePageCreatePath from './pages/homePageCreatePath/homePageCreatePath';
-import { useState } from 'react';
+import StructurePage from './pages/structurePage/structurePage';
+
 
 function App() {
   const [mainObj, setMainObj] = useState({sub1: '' , sub2: ''})
@@ -27,6 +29,7 @@ function App() {
         <Route path="/loadingPage" element={<LoadingPage mainObj = {mainObj} />} />
         <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd mainObj = {mainObj} updateMainObj = {updateMainObj}/>} />
         <Route path="/homePageCreatePath" element={<HomePageCreatePath mainObj = {mainObj}/>} />
+        <Route path="/structurePage" element={<StructurePage/>} />
       </Routes>
     </Router>
   );

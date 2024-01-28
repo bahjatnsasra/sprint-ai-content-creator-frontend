@@ -44,7 +44,7 @@ const HomePageCreatePath = (props) => {
             </div>
 
             <div className={styles.underBtn}>
-                <UnderButtons back='/' forward='/genaratedSubjects'/>
+                <UnderButtons back='/chooseSubject' forward='/structurePage'/>
             </div>
         </React.Fragment>
     );

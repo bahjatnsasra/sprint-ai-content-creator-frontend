@@ -1,0 +1,39 @@
+.all_page_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: 1200px;
+    margin-bottom: 30px;
+}
+
+.img{
+    margin-top: 50px;
+}
+
+.container h2{
+    color: #946AB3;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Assistant', sans-serif;
+    margin-bottom: 0px;
+    margin-right: 20px;
+}
+.container label{
+    color: #946AB3;
+    font-size: 32px;
+    font-weight: 500;
+    font-family: 'Assistant', sans-serif;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.underBtn{
+    width: 100%;
+}
