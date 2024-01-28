@@ -33,7 +33,7 @@ const Day5 = () => {
         </div>
 
         <div className={styles.underBtn}>
-                <UnderButtons text='לצפיה במסלול' back='/day4' forward='/day5'/>
+                <UnderButtons text='לצפיה במסלול' back='/day4' forward='/watchPath'/>
             </div>
 
         </div>

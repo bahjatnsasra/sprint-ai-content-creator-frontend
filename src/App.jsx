@@ -13,6 +13,7 @@ import Day2 from './pages/days/day2';
 import Day3 from './pages/days/day3';
 import Day4 from './pages/days/day4';
 import Day5 from './pages/days/day5';
+import WatchPath from './pages/watchPath/watchPath';
 
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
         <Route path="/day3" element={<Day3/>} />
         <Route path="/day4" element={<Day4/>} />
         <Route path="/day5" element={<Day5/>} />
+
+        <Route path="/watchPath" element={<WatchPath/>} />
         
       </Routes>
     </Router>

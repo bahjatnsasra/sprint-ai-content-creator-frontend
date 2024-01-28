@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import styels from './underButtons.module.css'
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
