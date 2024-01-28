@@ -12,7 +12,7 @@ const UnderButtons = (props) => {
 
             <button onClick={() => navigate(props.forward)} className={styels.move_btn}>
                 <IoIosArrowBack></IoIosArrowBack>
-                <label>הבא</label>
+                <label>{props.text}</label>
             </button>
 
             <button onClick={() => navigate(props.back)} className={styels.move_back_btn}><IoIosArrowForward></IoIosArrowForward></button>

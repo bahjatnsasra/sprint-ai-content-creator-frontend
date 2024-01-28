@@ -7,7 +7,7 @@ import PathData from '../../components/pathData/pathData';
 const StructurePage = () => {
 
     return <div className={styles.all_page_container}>
-        <Navbar />
+        <Navbar className={styles.navbar}/>
 
         <img className={styles.img} src="/procces3.svg" alt="image" />
 
@@ -35,7 +35,7 @@ const StructurePage = () => {
         </div>
 
         <div className={styles.underBtn}>
-                <UnderButtons back='/homePageCreatePath' forward='/chooseSubjectEnd'/>
+                <UnderButtons text='יצירת יום ראשון' back='/homePageCreatePath' forward='/chooseSubjectEnd'/>
             </div>
 
         </div>

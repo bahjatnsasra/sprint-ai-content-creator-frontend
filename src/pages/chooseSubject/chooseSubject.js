@@ -59,10 +59,10 @@ const ChooseSubject = (props) => {
 
             <div className={styles.underBtn}>
                 {selectedButton === 2 ? (
-                    <UnderButtons subject={subject} back='/' forward='/genaratedSubjects' />
+                    <UnderButtons text='הבא' subject={subject} back='/' forward='/genaratedSubjects' />
                 ) : (
                     !inputError && (
-                        <UnderButtons subject={subject} back='/' forward='/homePageCreatePath' />
+                        <UnderButtons text='הבא' subject={subject} back='/' forward='/homePageCreatePath' />
                     )
                 )}
             </div>

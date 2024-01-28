@@ -13,6 +13,12 @@
     margin-bottom: 30px;
 }
 
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
 .img{
     margin-top: 50px;
 }
