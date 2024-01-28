@@ -19,7 +19,7 @@ const ChooseSubject = (props) => {
     const handleInputChange = (event) => {
         const inputValue = event.target.value;
         setSubject(inputValue);
-        setInputError(inputValue.trim() === ''); // Check if input is empty
+        setInputError(inputValue === '');
     };
 
     return (
@@ -49,22 +49,26 @@ const ChooseSubject = (props) => {
                     <div className={styles.your_subject_container}>
                         <label>מה הנושא שלך ?</label>
                         <input
-                            onChange={handleInputChange}
+                            onChange={(event) => handleInputChange(event)}
                             placeholder='יצירת תמונות באמצעות בינה מלאכותית'
-                            className={inputError ? styles.error : ''}
+                            className={`${styles.input} ${inputError ? styles.error : ''}`}
                         />
                     </div>
                 )}
             </div>
 
             <div className={styles.underBtn}>
-                {selectedButton === 2 ? (
+                {
+                    selectedButton === 2 ? (
                     <UnderButtons text='הבא' subject={subject} back='/' forward='/genaratedSubjects' />
-                ) : (
-                    !inputError && (
-                        <UnderButtons text='הבא' subject={subject} back='/' forward='/homePageCreatePath' />
+                    ) : (
+                        !inputError ? (
+                            <UnderButtons text='הבא' subject={subject} back='/' forward='/homePageCreatePath'/>
+                        ) : (
+                            <UnderButtons text='הבא' subject={subject} back='/' forward='/chooseSubject' />
+                        )
                     )
-                )}
+                }
             </div>
 
         </React.Fragment>
