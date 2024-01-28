@@ -29,6 +29,9 @@
     font-weight: 700;
     font-family: 'Assistant', sans-serif;
 }
+.move_btn label{
+    cursor: pointer;
+}
 
 .move_back_btn{
     cursor: pointer;

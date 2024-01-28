@@ -66,7 +66,7 @@ const WatchPath = () => {
                 }
             </button>
 
-            <button onClick={() => navigate('./')} className={styles.move_back_btn}><IoIosArrowForward></IoIosArrowForward></button>
+            <button onClick={() => navigate('/')} className={styles.move_back_btn}><IoIosArrowForward></IoIosArrowForward></button>
         </div>
 
     </div>

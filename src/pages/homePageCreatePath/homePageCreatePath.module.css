@@ -7,7 +7,7 @@
 }
 
 .img{
-    margin-top: 30px;
+    margin-top: 120px;
 }
 
 .container_data{
@@ -82,14 +82,14 @@
 .createPaint_btn{
     margin-right: 30px;    
     margin-top: 30px;
-    background-color: #8b42b6;
+    background-color: #946AB3;
     color: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    border-radius: 20px;
+    border-radius: 35px;
     border: none;
     gap: 20px;
     padding: 20px;
