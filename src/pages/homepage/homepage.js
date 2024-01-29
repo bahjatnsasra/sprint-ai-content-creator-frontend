@@ -1,12 +1,12 @@
 import styels from './homepage.module.css'
 import Navbar from '../../components/navbar/navbar'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
 
     const navigate = useNavigate();
-
+    
     return <React.Fragment>
         <Navbar></Navbar>
         <div className={styels.container}>

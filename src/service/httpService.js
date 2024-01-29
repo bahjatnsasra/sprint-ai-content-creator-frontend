@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 const api = axios.create({
   headers: {
@@ -6,16 +6,46 @@ const api = axios.create({
   },
 });
 
-// GET request
-const get = async (endpoint) => {
+
+
+export async function request(url, method, data = null) {
   try {
-    const response = await api.get(endpoint);
-    return response.data;
+    const options = {
+      method, 
+      data
+    }
+    if (data) {
+      options.body = JSON.stringify({...data})
+    }
+    const response = await axios(url,options)
+    return response.data
   } catch (error) {
-    console.error('GET Request Error:', error.message);
-    throw error;
+    if(error.request){
+      console.log('Error', error.message);
+      throw(error.response.data)
+    }
   }
-};
+}
+// GET request
+
+export async function get(url) {
+  try {
+    const response = await request(url , 'get')
+    return response
+  } catch (error) {
+    throw(error)
+  }
+}
+
+// const get = async (endpoint) => {
+//   try {
+//     const response = await api.get(endpoint);
+//     return response.data;
+//   } catch (error) {
+//     console.error('GET Request Error:', error.message);
+//     throw error;
+//   }
+// };
 
 // POST request
 const post = async (endpoint, data) => {
@@ -50,25 +80,5 @@ const remove = async (endpoint) => {
   }
 };
 
-// Example usage
-// (async () => {
-//   try {
-//     // GET example
-//     const todos = await get('/todos');
-//     console.log('GET Todos:', todos);
+  
 
-//     // POST example
-//     const newTodo = await post('/todos', { title: 'New Todo', completed: false });
-//     console.log('POST New Todo:', newTodo);
-
-//     // PUT example
-//     const updatedTodo = await put('/todos/1', { title: 'Updated Todo', completed: true });
-//     console.log('PUT Updated Todo:', updatedTodo);
-
-//     // DELETE example
-//     const deletedTodo = await remove('/todos/1');
-//     console.log('DELETE Deleted Todo:', deletedTodo);
-//   } catch (error) {
-//     console.error('Example Usage Error:', error.message);
-//   }
-// })();
