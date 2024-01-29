@@ -7,41 +7,56 @@ import { GoSync } from "react-icons/go";
 const ChooseSubjectEnd = (props) => {
     const [selectedButton, setSelectedButton] = useState(2);
     const [subject, setSubject] = useState();
+    const [realSubject, setRealSubject] = useState();
 
     const handleButtonClick = (buttonIndex) => {
         setSelectedButton(buttonIndex);
     };
 
     useEffect(() => {
-        console.log(props.mainObj);
-    }, [])
+        setSubject(props.mainObj.sub1)
+        console.log(realSubject)
+        props.updateMainObj('',realSubject)
+    }, [realSubject])
 
     return (
         <React.Fragment>
             <Navbar />
             <div className={styles.container}>
-                <img className={styles.img} src="/procces1.svg" alt="image" />
-                <label className={styles.title}>נושאים בנושא {props.subject}</label>
+                <img className={styles.img} src="/procces2.svg" alt="image" />
+                <label className={styles.title}>נושאים בנושא {subject}</label>
 
                 <div className={styles.top_container_buttons}>
                     <div className={styles.buttons_container}>
                         <button
                             className={`${styles.btn} ${selectedButton === 1 ? styles.selected : ''}`}
-                            onClick={() => handleButtonClick(1)}
+                            value='נושא 1'
+                            onClick={(event) => {
+                                handleButtonClick(1);
+                                setRealSubject(event.target.value);
+                            }}
                         >
                             נושא 1
                         </button>
 
                         <button
                             className={`${styles.btn} ${selectedButton === 2 ? styles.selected : ''}`}
-                            onClick={() => handleButtonClick(2)}
+                            value='נושא 2'
+                            onClick={(event) => {
+                                handleButtonClick(2);
+                                setRealSubject(event.target.value);
+                            }}
                         >
                             נושא 2
                         </button>
 
                         <button
                             className={`${styles.btn} ${selectedButton === 3 ? styles.selected : ''}`}
-                            onClick={() => handleButtonClick(3)}
+                            value='נושא 3'
+                            onClick={(event) => {
+                                handleButtonClick(3);
+                                setRealSubject(event.target.value);
+                            }}
                         >
                             נושא 3
                         </button>
@@ -56,7 +71,7 @@ const ChooseSubjectEnd = (props) => {
             </div>
 
             <div className={styles.underBtn}>
-                <UnderButtons subject={subject} back='/' forward='/homePageCreatePath'/>
+                <UnderButtons text='הבא' subject={subject} back='/genaratedSubjects' forward='/homePageCreatePath'/>
             </div>
         </React.Fragment>
     );

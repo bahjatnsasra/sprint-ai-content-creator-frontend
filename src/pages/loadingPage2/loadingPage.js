@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
-import styles from './loadingPage.module.css';
+import styles from '../loadingPage1/loadingPage.module.css';
 import Navbar from '../../components/navbar/navbar';
 import { useNavigate } from "react-router-dom";
 
-const LoadingPage = (props) => {
+const LoadingPage2 = () => {
 
     const navigate = useNavigate();
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            navigate('/chooseSubjectEnd');
+            navigate('/structurePage');
         }, 7000);
 
         return () => clearTimeout(timeout);
@@ -23,7 +23,7 @@ const LoadingPage = (props) => {
             
                 <div className={styles.box_container}>
                     <img className={styles.loading_gif} src="//2279b9660181ae6c1d8dcced2d7bfdc6.cdn.bubble.io/f1703410484586x240606988286996770/output-onlinegiftools.gif" alt="loading gif" />
-                    <label>אנחנו מכינים לכם רעיונות<br></br> בתחום ה{props.mainObj.sub1} למסלול</label>
+                    <label>אנחנו מכינים לכם מתווה למסלול</label>
                     <img className={styles.tiny_img} src="/tiny_image.svg" alt="image" />
                 </div>
             
@@ -32,4 +32,4 @@ const LoadingPage = (props) => {
     );
 };
 
-export default LoadingPage;
+export default LoadingPage2;

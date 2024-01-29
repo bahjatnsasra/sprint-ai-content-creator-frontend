@@ -1,4 +1,32 @@
+.all_page_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .container{
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: 1200px;
+    margin-bottom: 30px;
+}
+
+.img{
+    margin-top: 120px;
+}
+
+.container h2{
+    color: #946AB3;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Assistant', sans-serif;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.underBtn_container{
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
@@ -8,8 +36,9 @@
     justify-content: space-between;
     align-items: center;
     font-family: 'Assistant', sans-serif;
+    position: fixed;
+    bottom: 0;
 }
-
 .move_btn{
     cursor: pointer;
     display: flex;
@@ -17,7 +46,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding-right: 25px;
+    width: 300px;
     min-width: 180px;
     height: 70px;
     margin-left: 50px;
@@ -28,6 +57,7 @@
     font-size: 25px;
     font-weight: 700;
     font-family: 'Assistant', sans-serif;
+    direction: rtl;
 }
 .move_btn label{
     cursor: pointer;
@@ -50,4 +80,13 @@
     font-size: 35px;
     font-family: 'Assistant', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loading{
+    animation: spin 1s linear infinite;
+    font-size: 30px;
 }

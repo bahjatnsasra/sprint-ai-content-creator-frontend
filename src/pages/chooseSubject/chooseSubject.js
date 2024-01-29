@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './chooseSubject.module.css';
 import Navbar from '../../components/navbar/navbar';
-import UnderButtons from '../../components/underButtons/underButtons'
+import UnderButtons from '../../components/underButtons/underButtons';
 
-const ChooseSubject = () => {
+const ChooseSubject = (props) => {
     const [selectedButton, setSelectedButton] = useState(2);
-    const [subject, setSubject] = useState();
+    const [subject, setSubject] = useState('');
+    const [inputError, setInputError] = useState(true);
 
     const handleButtonClick = (buttonIndex) => {
         setSelectedButton(buttonIndex);
+    };
+
+    useEffect(() => {
+        props.updateMainObj('', subject);
+    }, [subject]);
+
+    const handleInputChange = (event) => {
+        const inputValue = event.target.value;
+        setSubject(inputValue);
+        setInputError(inputValue === '');
     };
 
     return (
@@ -34,20 +45,32 @@ const ChooseSubject = () => {
                     </button>
                 </div>
 
-                {
-                    selectedButton !== 2 ?
-                        <div className={styles.your_subject_container}>
-                            <label>מה הנושא שלך ?</label>
-                            <input onChange={(event) => setSubject(event.target.value)} placeholder='יצירת תמונות באמצעות בינה מלאכותית' />
-                        </div>
-                    : 
-                    null
-                }
+                {selectedButton !== 2 && (
+                    <div className={styles.your_subject_container}>
+                        <label>מה הנושא שלך ?</label>
+                        <input
+                            onChange={(event) => handleInputChange(event)}
+                            placeholder='יצירת תמונות באמצעות בינה מלאכותית'
+                            className={`${styles.input} ${inputError ? styles.error : ''}`}
+                        />
+                    </div>
+                )}
             </div>
 
             <div className={styles.underBtn}>
-                <UnderButtons subject={subject} back='/' forward='/genaratedSubjects'/>
+                {
+                    selectedButton === 2 ? (
+                    <UnderButtons text='הבא' subject={subject} back='/' forward='/genaratedSubjects' />
+                    ) : (
+                        !inputError ? (
+                            <UnderButtons text='הבא' subject={subject} back='/' forward='/homePageCreatePath'/>
+                        ) : (
+                            <UnderButtons text='הבא' subject={subject} back='/' forward='/chooseSubject' />
+                        )
+                    )
+                }
             </div>
+
         </React.Fragment>
     );
 };

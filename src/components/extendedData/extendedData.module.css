@@ -1,0 +1,37 @@
+.container{
+    border-radius: 30px;
+    padding: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #6a6a6ac7;
+    font-size: 26px;
+    font-family: 'Assistant', sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(182, 182, 182, 0.284);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.title_day{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    direction: ltr;
+}
+.title_day label{
+    font-size: 26px;
+    font-weight: 600;
+}
+.arrow_icon{
+    font-size: 30px;
+}
+
+.data_container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding: 20px;
+}
