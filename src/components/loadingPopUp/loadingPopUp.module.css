@@ -1,14 +1,3 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.img{
-    margin-top: 130px;
-}
-
 .box_container{
     margin-top: 100px;
     background-color: #E6F4ED;
@@ -28,6 +17,8 @@
     font-weight: 700;
     margin-left: 150px;
     text-align: center;
+    width: 600px;
+    direction: rtl;
 }
 
 .loading_gif{

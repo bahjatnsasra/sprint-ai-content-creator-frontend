@@ -69,6 +69,20 @@
     gap: 20px;
     cursor: pointer;
 }
+.more_option_btn_label{
+    cursor: pointer;
+}
+.generateAgain_icon_loading{
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.selected {
+    border: 3px solid #946AB3
+}
 
 .selected {
     border: 3px solid #946AB3

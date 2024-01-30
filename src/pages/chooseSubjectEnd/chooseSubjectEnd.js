@@ -5,18 +5,24 @@ import UnderButtons from '../../components/underButtons/underButtons'
 import { GoSync } from "react-icons/go";
 
 const ChooseSubjectEnd = (props) => {
+
     const [selectedButton, setSelectedButton] = useState(2);
     const [subject, setSubject] = useState();
     const [realSubject, setRealSubject] = useState();
+    const [generateAgainClicked, setGenerateAgainClicked] = useState(false)
 
     const handleButtonClick = (buttonIndex) => {
         setSelectedButton(buttonIndex);
     };
 
+    const generateAgain = async () => {
+        setGenerateAgainClicked(true)
+    }
+
     useEffect(() => {
         setSubject(props.mainObj.sub1)
+        props.updateMainObj(subject,realSubject)
         console.log(realSubject)
-        props.updateMainObj('',realSubject)
     }, [realSubject])
 
     return (
@@ -62,9 +68,12 @@ const ChooseSubjectEnd = (props) => {
                         </button>
                     </div>
 
-                    <button className={styles.more_option_btn}>
-                        <label>הצעות נוספות</label>
+                    <button className={styles.more_option_btn} onClick={generateAgain}>
+                        <label className={styles.more_option_btn_label}>הצעות נוספות</label>
+                        {!generateAgainClicked ? 
                         <GoSync></GoSync>
+                        :
+                        <GoSync className={styles.generateAgain_icon_loading}></GoSync>}
                     </button>
                 </div>
 

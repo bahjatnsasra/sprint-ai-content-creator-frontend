@@ -4,7 +4,7 @@ import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons'
 import { GoSync } from "react-icons/go";
 import {getSubjects} from '../../service/openAIService'
-import Loading from '../../components/loading/loading';
+import LoadingPopUp from '../../components/loadingPopUp/loadingPopUp';
 
 const GenaratedSubjects = (props) => {
 
@@ -77,13 +77,13 @@ const GenaratedSubjects = (props) => {
                     </button>
                 </div>
                     : 
-                    <Loading></Loading>
+                    <LoadingPopUp text='אנחנו מכינים לכם רעיונות לנושאים...'></LoadingPopUp>
                     }
 
             </div>
 
             <div className={styles.underBtn}>
-                <UnderButtons text='הבא' subject={subject} back='/chooseSubject' forward='/loadingPage'/>
+                <UnderButtons text='הבא' back='/chooseSubject' forward='/chooseSubjectEnd'/>
             </div>
         </React.Fragment>
     );

@@ -53,7 +53,7 @@ const HomePageCreatePath = (props) => {
             </div>
 
             <div className={styles.underBtn}>
-                <UnderButtons text='יצירת מסלול' back='/chooseSubject' forward='/loadingPage2'/>
+                <UnderButtons text='יצירת מסלול' back='/chooseSubject' forward='/structurePage'/>
             </div>
         </React.Fragment>
     );
