@@ -1,4 +1,3 @@
-// const axios = require('axios');
 import { get } from './httpService'
 
 

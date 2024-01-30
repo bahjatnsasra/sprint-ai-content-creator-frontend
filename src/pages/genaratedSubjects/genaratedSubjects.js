@@ -3,23 +3,34 @@ import styles from './genaratedSubjects.module.css';
 import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons'
 import { GoSync } from "react-icons/go";
+import {getSubjects} from '../../service/openAIService'
 
 const GenaratedSubjects = (props) => {
 
     const [subject, setSubject] = useState();
     const [lastClickedButton, setLastClickedButton] = useState(null);
+    const [subjects,setSubjects] = useState()
     
     useEffect(() => {
         props.updateMainObj(subject,'')
     }, [subject])
 
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await getSubjects()
+            setSubjects(data)
+        }
+        fetchData()
+    },[])
+
     const renderButtons = () => {
     const buttons = [];
-    for (let i = 1; i < 7; i++) {
+    for (let i = 0; i < 7; i++) {
         buttons.push(
         <button
             key={i}
-            value={i}
+            value={subjects[i]}
             onClick={(event) => {
             setSubject(event.target.value);
             if (lastClickedButton !== null) {
@@ -30,7 +41,7 @@ const GenaratedSubjects = (props) => {
             }}
             className={styles.btn}
         >
-            {i}
+            {subjects[i]}
         </button>
         );
     }
@@ -39,11 +50,11 @@ const GenaratedSubjects = (props) => {
 
     const renderButtons2 = () => {
     const buttons = [];
-    for (let i = 7; i <= 12; i++) {
+    for (let i = 7; i < 12; i++) {
         buttons.push(
         <button
             key={i}
-            value={i}
+            value={subjects[i]}
             onClick={(event) => {
             setSubject(event.target.value);
             if (lastClickedButton !== null) {
@@ -54,7 +65,7 @@ const GenaratedSubjects = (props) => {
             }}
             className={styles.btn}
         >
-            {i}
+            {subjects[i]}
         </button>
         );
     }
@@ -70,7 +81,7 @@ const GenaratedSubjects = (props) => {
 
                 <label className={styles.title}>בחירת תחום כללי לנושא</label>
 
-                <div className={styles.buttons_container}>
+                {subjects && <div className={styles.buttons_container}>
                     <label className={styles.options_label}>הנה כמה אפשרויות שהכנו לך</label>
 
                     <div className={styles.row1}>
@@ -85,7 +96,7 @@ const GenaratedSubjects = (props) => {
                         <label>הצעות נוספות</label>
                         <GoSync></GoSync>
                     </button>
-                </div>
+                </div>}
 
             </div>
 

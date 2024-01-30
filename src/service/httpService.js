@@ -7,7 +7,6 @@ const api = axios.create({
 });
 
 
-
 export async function request(url, method, data = null) {
   try {
     const options = {
@@ -26,59 +25,39 @@ export async function request(url, method, data = null) {
     }
   }
 }
-// GET request
 
 export async function get(url) {
   try {
     const response = await request(url , 'get')
     return response
   } catch (error) {
-    throw(error)
+    throw error
   }
 }
 
-// const get = async (endpoint) => {
-//   try {
-//     const response = await api.get(endpoint);
-//     return response.data;
-//   } catch (error) {
-//     console.error('GET Request Error:', error.message);
-//     throw error;
-//   }
-// };
-
-// POST request
-const post = async (endpoint, data) => {
+export async function post(url, data, headers = null) {
   try {
-    const response = await api.post(endpoint, data);
-    return response.data;
+    const response = await request(url,'post',data);
+    return response
   } catch (error) {
-    console.error('POST Request Error:', error.message);
+    throw error
+  }
+};
+
+export async function put(url, data) {
+  try {
+    const response = await request(url,'put', data);
+    return response
+  } catch (error) {
     throw error;
   }
 };
 
-// PUT request
-const put = async (endpoint, data) => {
+export async function remove(url) {
   try {
-    const response = await api.put(endpoint, data);
-    return response.data;
+    const response = await request(url);
+    return response
   } catch (error) {
-    console.error('PUT Request Error:', error.message);
     throw error;
   }
 };
-
-// DELETE request
-const remove = async (endpoint) => {
-  try {
-    const response = await api.delete(endpoint);
-    return response.data;
-  } catch (error) {
-    console.error('DELETE Request Error:', error.message);
-    throw error;
-  }
-};
-
-  
-
