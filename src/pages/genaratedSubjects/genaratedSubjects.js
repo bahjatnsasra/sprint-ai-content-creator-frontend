@@ -20,6 +20,7 @@ const GenaratedSubjects = (props) => {
         const fetchData = async () => {
             const data = await getSubjects()
             setSubjects(data)
+            console.log(data);
         }
         fetchData()
     },[])
