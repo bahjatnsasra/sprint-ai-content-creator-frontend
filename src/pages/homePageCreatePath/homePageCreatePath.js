@@ -3,11 +3,13 @@ import styles from './homePageCreatePath.module.css';
 import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons';
 import { FaMagic } from "react-icons/fa";
+import { VscDebugRestart } from "react-icons/vsc";
 
 const HomePageCreatePath = (props) => {
 
     const [subject, setSubject] = useState(props.mainObj.sub2);
     const [isMagicClicked, setIsMagicClicked] = useState(false);
+    const [isDescriptionClicked, setIsDescriptionClicked] = useState(false);
 
     // create dall E image
     const createImg = () => {
@@ -28,7 +30,14 @@ const HomePageCreatePath = (props) => {
                         <input placeholder='יצירת תמונות באמצעות בינה מלאכותית' type='text' value={subject} onChange={(event) => {setSubject(event.target.value)}}></input>
 
                         <label>מטרות המסלול</label>
-                        <textarea className={styles.description_textarea} placeholder='התלמידים יכירו את עולם יצירת התמונות בבינה מלאכותית, לימוד על סגנונות שונים באמנות וציור, פיתוח מיומנויות כתיבת פרומפטים לקבלת תוצאות רצויות' type='text'></textarea>
+                        <div className={styles.textarea_container}>
+                            <textarea className={styles.description_textarea} placeholder='התלמידים יכירו את עולם יצירת התמונות בבינה מלאכותית, לימוד על סגנונות שונים באמנות וציור, פיתוח מיומנויות כתיבת פרומפטים לקבלת תוצאות רצויות' type='text'></textarea>
+                            {isDescriptionClicked ? 
+                                <VscDebugRestart className={styles.generate_icon_loading}></VscDebugRestart>
+                             : 
+                                <VscDebugRestart onClick={() => setIsDescriptionClicked(true)} className={styles.generate_icon}></VscDebugRestart>}
+                        </div>
+                        
 
                         <div className={styles.create_img_container}>
                             <label>יצירת תמונה למסלול</label>

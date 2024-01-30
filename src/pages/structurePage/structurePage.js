@@ -2,6 +2,7 @@ import styles from './structurePage.module.css';
 import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons';
 import PathData from '../../components/pathData/pathData';
+import { IoIosAlert } from "react-icons/io";
 
 const StructurePage = () => {
 
@@ -13,6 +14,11 @@ const StructurePage = () => {
         <div className={styles.container}>
             <h2>מתווה למסלול</h2>
             <label>בנושא subject</label>
+
+            <div className={styles.messege_div}>
+                <IoIosAlert className={styles.alert_icon}></IoIosAlert>
+                <label>באפשרותכם לערוך את תוכן המתווה</label>
+            </div>
 
             <PathData data='האם אתה אוהב Cheese Whiz? שיזוף בהתזה? ריסים מלאכותיים? זה מה שהוא לורם איפסום בעיני רבים - הוא משפשף אותם בדרך הלא נכונה, כל הדרך. זה לא אמיתי, מוזר, גורם לך לתהות אם משהו לא בסדר, נראה שהוא מחפש את תשומת הלב שלך מכל הסיבות הלא נכונות. בדרך כלל, אנחנו מעדיפים את הדבר האמיתי, יין ללא חומרים משמרים מבוססי גופרית, חמאה אמיתית, לא מרגרינה, ולכן היינו רוצים שהפריסות והעיצובים שלנו יהיו מלאים במילים אמיתיות, עם מחשבות שחשובות, מידע שיש לו ערך.
 התוספות שאולי בחרת לאותה פרוסת פיצה לארוחת ערב בטלוויזיה כששכחת לקנות מאכלים, הצבע שאתה עשוי להטיח על הפנים שלך כדי להרשים את הבוס החדש הוא העסק שלך. אבל מה עם הלחם היומי שלך? עיצוב קומפוזיציות, פריסות, מסגרות wireframes - האם הלקוחות שלך יסכימו שאתה מתנהל בצורה קלה? הרשויות בעסק שלנו יגידו במילים לא ברורות שלורם איפסום היא כל כך ענקית, ענקית, אין לא לא לוותר לנצח. לא כל כך מהר, הייתי אומר, ישנם כמה גורמים גואלים לטובת טקסט יווני, מכיוון שהשימוש בו הוא רק סימפטום לבעיה גרועה יותר שיש לקחת בחשבון.
