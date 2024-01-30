@@ -16,6 +16,8 @@
     font-weight: 600;
     font-size: 40px;
     font-family: 'Assistant', sans-serif;
+    margin-right: 20px;
+    margin-bottom: -15px;
 }
 
 .options_label{
@@ -33,17 +35,20 @@
     direction: rtl;
 }
 
-.row2{
-    margin-top: -10px;
+.grid_buttons{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
 }
 
 .btn{
     color: #946AB3;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 27px;
     border-radius: 20px;
     border: none;
-    padding: 20px;
+    padding: 15px;
     width: 200px;
     height: 150px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -76,6 +81,16 @@
     gap: 20px;
     cursor: pointer;
 }
+.more_option_btn_label{
+    cursor: pointer;
+}
+.generateAgain_icon_loading{
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
 .selected {
     border: 3px solid #946AB3
