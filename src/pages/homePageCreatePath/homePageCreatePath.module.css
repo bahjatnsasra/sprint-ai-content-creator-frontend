@@ -57,19 +57,56 @@
     color: rgb(197, 197, 197);
 }
 
+.textarea_container {
+    border: 2px solid rgba(209, 209, 209, 0.371);
+    border-radius: 15px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.textarea_container:focus-within {
+    border: none;
+}
+
+.generate_icon{
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #946AB3;
+}
+.generate_icon_loading{
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #946AB3;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 .description_textarea{
     color: #3c3c3c;
     font-size: 24px;
     font-family: 'Assistant', sans-serif;
     border-radius: 15px;
-    border: 2px solid rgba(209, 209, 209, 0.371);
+    border: none;
     padding: 10px;
-    margin: 10px;
     width: 500px;
     height: 120px;
+    resize:none;
 }
 .description_textarea::placeholder{
     color: rgb(197, 197, 197);
+}
+.description_textarea:focus-within {
+    border: 2px solid rgba(209, 209, 209, 0.371);
 }
 
 .create_img_container{
