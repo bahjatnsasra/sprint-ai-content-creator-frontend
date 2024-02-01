@@ -21,7 +21,7 @@ const GenaratedSubjects = (props) => {
     useEffect(() => {
         fetchData()
         props.updateMainObj(subject,'')
-    }, [])
+    }, [subject])
 
     const generateAgain = async () => {
         setGenerateAgainClicked(true)

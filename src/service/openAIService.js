@@ -8,3 +8,12 @@ export async function getSubjects() {
         console.log(error);
     }
 }
+
+export async function getUnderSubjects(subject) {
+    try {
+        const subjectList = await get(`OpenAI/get/subTopics/${subject}`);
+        return subjectList;
+    } catch (error) {
+        console.log(error);
+    }
+}

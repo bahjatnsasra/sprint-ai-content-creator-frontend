@@ -3,6 +3,7 @@ import styles from './chooseSubjectEnd.module.css';
 import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons'
 import { GoSync } from "react-icons/go";
+import {getUnderSubjects} from '../../service/openAIService'
 
 const ChooseSubjectEnd = (props) => {
 
@@ -10,6 +11,17 @@ const ChooseSubjectEnd = (props) => {
     const [subject, setSubject] = useState();
     const [realSubject, setRealSubject] = useState();
     const [generateAgainClicked, setGenerateAgainClicked] = useState(false)
+    const [subjects,setSubjects] = useState();
+
+    const fetchData = async () => {
+        const data = await getUnderSubjects(subject)
+        setSubjects(data)
+    }
+
+    useEffect(() => {
+        fetchData()
+        props.updateMainObj(subject,'')
+    }, [subject])
 
     const handleButtonClick = (buttonIndex) => {
         setSelectedButton(buttonIndex);
@@ -22,7 +34,6 @@ const ChooseSubjectEnd = (props) => {
     useEffect(() => {
         setSubject(props.mainObj.sub1)
         props.updateMainObj(subject,realSubject)
-        console.log(realSubject)
     }, [realSubject])
 
     return (
@@ -32,39 +43,40 @@ const ChooseSubjectEnd = (props) => {
                 <img className={styles.img} src="/procces2.svg" alt="image" />
                 <label className={styles.title}>נושאים בנושא {subject}</label>
 
+                {subjects &&
                 <div className={styles.top_container_buttons}>
                     <div className={styles.buttons_container}>
                         <button
                             className={`${styles.btn} ${selectedButton === 1 ? styles.selected : ''}`}
-                            value='נושא 1'
+                            value={subjects[0]}
                             onClick={(event) => {
                                 handleButtonClick(1);
                                 setRealSubject(event.target.value);
                             }}
                         >
-                            נושא 1
+                            {subjects[0]}
                         </button>
 
                         <button
                             className={`${styles.btn} ${selectedButton === 2 ? styles.selected : ''}`}
-                            value='נושא 2'
+                            value={subjects[1]}
                             onClick={(event) => {
                                 handleButtonClick(2);
                                 setRealSubject(event.target.value);
                             }}
                         >
-                            נושא 2
+                            {subjects[1]} 
                         </button>
 
                         <button
                             className={`${styles.btn} ${selectedButton === 3 ? styles.selected : ''}`}
-                            value='נושא 3'
+                            value={subjects[2]}
                             onClick={(event) => {
                                 handleButtonClick(3);
                                 setRealSubject(event.target.value);
                             }}
                         >
-                            נושא 3
+                            {subjects[2]}
                         </button>
                     </div>
 
@@ -75,7 +87,7 @@ const ChooseSubjectEnd = (props) => {
                         :
                         <GoSync className={styles.generateAgain_icon_loading}></GoSync>}
                     </button>
-                </div>
+                </div>}
 
             </div>
 
