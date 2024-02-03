@@ -11,7 +11,6 @@
 }
 
 .title{
-    margin-top: 70px;
     color: #946AB3;
     font-weight: 600;
     font-size: 40px;
@@ -20,6 +19,7 @@
 
 .top_container_buttons{
     direction: rtl;
+    margin-top: 60px;
 }
 
 .buttons_container{
@@ -62,6 +62,14 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     background-color: white;
     font-family: 'Assistant', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+.more_option_btn div{
     display: flex;
     flex-direction: row;
     justify-content: center;

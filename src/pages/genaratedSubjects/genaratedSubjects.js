@@ -69,11 +69,17 @@ const GenaratedSubjects = (props) => {
                     </div>
 
                     <button className={styles.more_option_btn} onClick={generateAgain}>
-                        <label className={styles.more_option_btn_label}>הצעות נוספות</label>
+
                         {!generateAgainClicked ? 
-                        <GoSync></GoSync>
+                        <div>
+                            <label className={styles.more_option_btn_label}>הצעות נוספות</label>
+                            <GoSync></GoSync>
+                        </div>
                         :
-                        <GoSync className={styles.generateAgain_icon_loading}></GoSync>}
+                        <div>
+                            <label className={styles.more_option_btn_label}>טוען נושאים</label>
+                            <GoSync className={styles.generateAgain_icon_loading}></GoSync>
+                        </div>}
                     </button>
                 </div>
                     : 

@@ -3,7 +3,8 @@ import styles from './chooseSubjectEnd.module.css';
 import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons'
 import { GoSync } from "react-icons/go";
-import {getUnderSubjects} from '../../service/openAIService'
+import {getUnderSubjects} from '../../service/openAIService';
+import LoadingPopUp from '../../components/loadingPopUp/loadingPopUp';
 
 const ChooseSubjectEnd = (props) => {
 
@@ -29,6 +30,8 @@ const ChooseSubjectEnd = (props) => {
 
     const generateAgain = async () => {
         setGenerateAgainClicked(true)
+        await fetchData()
+        setGenerateAgainClicked(false)
     }
 
     useEffect(() => {
@@ -41,10 +44,12 @@ const ChooseSubjectEnd = (props) => {
             <Navbar />
             <div className={styles.container}>
                 <img className={styles.img} src="/procces2.svg" alt="image" />
-                <label className={styles.title}>נושאים בנושא {subject}</label>
 
-                {subjects &&
+                {subjects ?
                 <div className={styles.top_container_buttons}>
+                    
+                    <label className={styles.title}>נושאים בנושא {subject}</label>
+                    
                     <div className={styles.buttons_container}>
                         <button
                             className={`${styles.btn} ${selectedButton === 1 ? styles.selected : ''}`}
@@ -81,13 +86,21 @@ const ChooseSubjectEnd = (props) => {
                     </div>
 
                     <button className={styles.more_option_btn} onClick={generateAgain}>
-                        <label className={styles.more_option_btn_label}>הצעות נוספות</label>
                         {!generateAgainClicked ? 
-                        <GoSync></GoSync>
+                        <div>
+                            <label className={styles.more_option_btn_label}>הצעות נוספות</label>
+                            <GoSync></GoSync>
+                        </div>
                         :
-                        <GoSync className={styles.generateAgain_icon_loading}></GoSync>}
+                        <div>
+                            <label className={styles.more_option_btn_label}>טוען נושאים</label>
+                            <GoSync className={styles.generateAgain_icon_loading}></GoSync>
+                        </div>}
                     </button>
-                </div>}
+                </div>
+                :
+                    <LoadingPopUp text='טוען רעיונות בנושא ' subject={subject}></LoadingPopUp>
+                }
 
             </div>
 
