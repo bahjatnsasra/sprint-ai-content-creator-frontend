@@ -11,6 +11,8 @@ const HomePageCreatePath = (props) => {
     const [subject, setSubject] = useState(props.mainObj.sub2);
     const [isMagicClicked, setIsMagicClicked] = useState(false);
     const [isDescriptionClicked, setIsDescriptionClicked] = useState(false);
+    const [description, setDescription] = useState();
+
     const descriptionRef = useRef(null);
 
     // create dall E image
@@ -18,9 +20,10 @@ const HomePageCreatePath = (props) => {
         setIsMagicClicked(true);
     };
 
+    
     const fetchData = async () => {
         const data = await getSubjectDescription(subject);
-        descriptionRef.current = data;
+        setDescription(data)
     };
     
     useEffect(() => {
@@ -42,10 +45,10 @@ const HomePageCreatePath = (props) => {
 
                         <label>מטרות המסלול</label>
                         <div className={styles.textarea_container}>
-                            <textarea ref={descriptionRef} className={styles.description_textarea} placeholder='התלמידים יכירו את עולם יצירת התמונות בבינה מלאכותית, לימוד על סגנונות שונים באמנות וציור, פיתוח מיומנויות כתיבת פרומפטים לקבלת תוצאות רצויות' type='text'></textarea>
+                            <textarea value={description} className={styles.description_textarea} placeholder='התלמידים יכירו את עולם יצירת התמונות בבינה מלאכותית, לימוד על סגנונות שונים באמנות וציור, פיתוח מיומנויות כתיבת פרומפטים לקבלת תוצאות רצויות' type='text'></textarea>
                             {isDescriptionClicked ? 
                                 <VscDebugRestart className={styles.generate_icon_loading}></VscDebugRestart>
-                             : 
+                            : 
                                 <VscDebugRestart onClick={() => setIsDescriptionClicked(true)} className={styles.generate_icon}></VscDebugRestart>}
                         </div>
                         
