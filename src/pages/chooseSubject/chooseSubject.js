@@ -26,7 +26,10 @@ const ChooseSubject = (props) => {
         <React.Fragment>
             <Navbar />
             <div className={styles.container}>
-                <img className={styles.img} src="/procces1.svg" alt="image" />
+                <div>
+                    <img className={styles.img} src="/procces1.svg" alt="image" />
+                </div>
+
                 <label className={styles.title}>נתחיל בבחירת נושא למסלול</label>
 
                 <div className={styles.buttons_container}>

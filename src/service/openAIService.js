@@ -17,3 +17,12 @@ export async function getUnderSubjects(subject) {
         console.log(error);
     }
 }
+
+export async function getSubjectDescription(subject) {
+    try {
+        const subjectDescription = await get(`OpenAI/get/description/${subject}`);
+        return subjectDescription;
+    } catch (error) {
+        console.log(error);
+    }
+}

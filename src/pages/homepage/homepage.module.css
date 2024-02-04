@@ -14,11 +14,12 @@
     color: white;
     border-radius: 20px;
     padding: 20px;
-    font-size: 34px;
+    font-size: 40px;
     font-weight: 600;
     width: 280px;
     height: 95px;
     cursor: pointer;
+    font-family: 'Assistant', sans-serif;
 }
 
 .img{
