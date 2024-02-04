@@ -13,13 +13,16 @@ const HomePageCreatePath = (props) => {
     const [isDescriptionClicked, setIsDescriptionClicked] = useState(false);
     const [description, setDescription] = useState();
 
-    const descriptionRef = useRef(null);
+    const generateAgainDescription = async () => {
+        setIsDescriptionClicked(true);
+        await fetchData();
+        setIsDescriptionClicked(false);
+    }
 
     // create dall E image
     const createImg = () => {
         setIsMagicClicked(true);
     };
-
     
     const fetchData = async () => {
         const data = await getSubjectDescription(subject);
@@ -49,7 +52,7 @@ const HomePageCreatePath = (props) => {
                             {isDescriptionClicked ? 
                                 <VscDebugRestart className={styles.generate_icon_loading}></VscDebugRestart>
                             : 
-                                <VscDebugRestart onClick={() => setIsDescriptionClicked(true)} className={styles.generate_icon}></VscDebugRestart>}
+                                <VscDebugRestart onClick={generateAgainDescription} className={styles.generate_icon}></VscDebugRestart>}
                         </div>
                         
 

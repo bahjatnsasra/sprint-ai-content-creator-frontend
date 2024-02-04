@@ -87,10 +87,11 @@ const GenaratedSubjects = (props) => {
                     }
 
             </div>
-
-            <div className={styles.underBtn}>
-                <UnderButtons text='הבא' back='/chooseSubject' forward='/chooseSubjectEnd'/>
-            </div>
+            
+            {subjects &&
+                <div className={styles.underBtn}>
+                    <UnderButtons text='הבא' back='/chooseSubject' forward='/chooseSubjectEnd'/>
+                </div>}
         </React.Fragment>
     );
 };

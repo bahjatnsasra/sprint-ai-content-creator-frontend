@@ -104,9 +104,10 @@ const ChooseSubjectEnd = (props) => {
 
             </div>
 
-            <div className={styles.underBtn}>
-                <UnderButtons text='הבא' subject={subject} back='/genaratedSubjects' forward='/homePageCreatePath'/>
-            </div>
+            {subjects &&
+                <div className={styles.underBtn}>
+                    <UnderButtons text='הבא' subject={subject} back='/genaratedSubjects' forward='/homePageCreatePath'/>
+                </div>}
         </React.Fragment>
     );
 };
