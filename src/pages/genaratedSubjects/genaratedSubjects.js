@@ -62,7 +62,7 @@ const GenaratedSubjects = (props) => {
 
                 {subjects ? <div className={styles.buttons_container}>
                     <label className={styles.title}>בחירת תחום כללי לנושא</label>
-                    <label className={styles.options_label}>הנה כמה אפשרויות שהכנו לך</label>
+                    <label className={styles.options_label}>הנה כמה אפשרויות שהכנו לכם, בחרו נושא אחד שמעניין אתכם</label>
 
                     <div className={styles.grid_buttons}>
                         {renderButtons()}
@@ -88,10 +88,12 @@ const GenaratedSubjects = (props) => {
 
             </div>
             
-            {subjects &&
+            {subjects != null && subject != null && (
                 <div className={styles.underBtn}>
                     <UnderButtons text='הבא' back='/chooseSubject' forward='/chooseSubjectEnd'/>
-                </div>}
+                </div>
+            )}
+
         </React.Fragment>
     );
 };
