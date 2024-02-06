@@ -8,7 +8,7 @@ import LoadingPopUp from '../../components/loadingPopUp/loadingPopUp';
 
 const ChooseSubjectEnd = (props) => {
 
-    const [selectedButton, setSelectedButton] = useState(2);
+    const [selectedButton, setSelectedButton] = useState();
     const [subject, setSubject] = useState();
     const [realSubject, setRealSubject] = useState();
     const [generateAgainClicked, setGenerateAgainClicked] = useState(false)
@@ -104,10 +104,11 @@ const ChooseSubjectEnd = (props) => {
 
             </div>
 
-            {subjects &&
+            {subjects != null && selectedButton != null && (
                 <div className={styles.underBtn}>
-                    <UnderButtons text='הבא' subject={subject} back='/genaratedSubjects' forward='/homePageCreatePath'/>
-                </div>}
+                <UnderButtons text='הבא' subject={subject} back='/genaratedSubjects' forward='/homePageCreatePath'/>
+                </div>
+            )}
         </React.Fragment>
     );
 };

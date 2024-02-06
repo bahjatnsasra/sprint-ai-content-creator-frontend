@@ -9,7 +9,7 @@ const Homepage = () => {
     return <React.Fragment>
         <Navbar></Navbar>
         <div className={styels.container}>
-                <img src="/homepage_text.svg" alt="image" />
+                <img className={styels.text} src="/homepage_text.svg" alt="image" />
                 <button onClick={() => navigate("/chooseSubject")} className={styels.btn}>התחילו</button>
 
                 <img  className={styels.img} src="/image.svg" alt="image" />

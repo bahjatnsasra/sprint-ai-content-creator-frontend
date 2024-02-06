@@ -14,9 +14,7 @@ const HomePageCreatePath = (props) => {
     const [description, setDescription] = useState();
 
     const generateAgainDescription = async () => {
-        setIsDescriptionClicked(true);
         await fetchData();
-        setIsDescriptionClicked(false);
     }
 
     // create dall E image
@@ -25,8 +23,10 @@ const HomePageCreatePath = (props) => {
     };
     
     const fetchData = async () => {
+        setIsDescriptionClicked(true);
         const data = await getSubjectDescription(subject);
         setDescription(data)
+        setIsDescriptionClicked(false);
     };
     
     useEffect(() => {
