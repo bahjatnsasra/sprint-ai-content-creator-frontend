@@ -17,9 +17,8 @@ import WatchPath from './pages/watchPath/watchPath';
 
 function App() {
   const [mainObj, setMainObj] = useState({sub1: '' , sub2: ''})
-  const [programPlan, setSrogramPlan] = useState()
-
-
+  const [programPlan, setProgramPlan] = useState()
+  console.log(programPlan);
 
   function updateMainObj(sub1, sub2) {
     const newMainObj = {...mainObj}
@@ -35,8 +34,8 @@ function App() {
         <Route path="/chooseSubject" element={<ChooseSubject updateMainObj = {updateMainObj}/>} />
         <Route path="/genaratedSubjects" element={<GenaratedSubjects updateMainObj = {updateMainObj}/> } />
         <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd mainObj = {mainObj}  updateMainObj = {updateMainObj}/>} />
-        <Route path="/homePageCreatePath" element={<HomePageCreatePath setSrogramPlan = {setSrogramPlan}  mainObj = {mainObj} />} />
-        <Route path="/structurePage" element={<StructurePage/>} />
+        <Route path="/homePageCreatePath" element={<HomePageCreatePath setProgramPlan = {setProgramPlan}  mainObj = {mainObj} />} />
+        <Route path="/structurePage" element={<StructurePage programPlan = {programPlan} />} />
 
         <Route path="/day1" element={<Day1/>} />
         <Route path="/day2" element={<Day2/>} />

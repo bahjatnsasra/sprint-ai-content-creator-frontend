@@ -30,9 +30,21 @@ export async function getSubjectDescription(subject) {
 
 export async function createProgramPlan(prpgramPlanObj) {
     try {
-        const programPlan = await post(`ProgramPlan/create`,prpgramPlanObj)
-        console.log(programPlan);
+        const programPlan = (await post(`ProgramPlan/create`,prpgramPlanObj)).object
+        return programPlan
     } catch (error) {
         
     }
 }
+export async function getImageUrl(subject) {
+    try {
+        const imageUrl = await get(`OpenAI/get/image/${subject}`);
+        return imageUrl;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+
+

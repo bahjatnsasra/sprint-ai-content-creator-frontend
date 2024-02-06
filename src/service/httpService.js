@@ -14,7 +14,7 @@ export async function request(url, method, data = null) {
       data
     }
     if (data) {
-      options.body = JSON.stringify({...data})
+      options.data = {...data}
     }
     const response = await axios(url,options)
     return response.data
