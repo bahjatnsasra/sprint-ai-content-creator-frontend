@@ -4,7 +4,7 @@ import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons';
 import { FaMagic } from "react-icons/fa";
 import { VscDebugRestart } from "react-icons/vsc";
-import {getSubjectDescription} from '../../service/openAIService'
+import {getSubjectDescription , createProgramPlan} from '../../service/openAIService'
 
 const HomePageCreatePath = (props) => {
 
@@ -30,6 +30,9 @@ const HomePageCreatePath = (props) => {
     };
     
     useEffect(() => {
+        async function fetchProgramPlan(params) {
+            const programPlan = await createProgramPlan()
+        }
         fetchData();
     }, [])
 

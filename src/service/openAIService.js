@@ -1,4 +1,4 @@
-import { get } from './httpService'
+import { get, post } from './httpService'
 
 export async function getSubjects() {
     try {
@@ -24,5 +24,15 @@ export async function getSubjectDescription(subject) {
         return subjectDescription;
     } catch (error) {
         console.log(error);
+    }
+}
+
+
+export async function createProgramPlan(prpgramPlanObj) {
+    try {
+        const programPlan = await post(`ProgramPlan/create`,prpgramPlanObj)
+        console.log(programPlan);
+    } catch (error) {
+        
     }
 }
