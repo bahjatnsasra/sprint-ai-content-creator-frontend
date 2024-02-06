@@ -4,22 +4,31 @@ import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons';
 import { FaMagic } from "react-icons/fa";
 import { VscDebugRestart } from "react-icons/vsc";
-import {getSubjectDescription} from '../../service/openAIService'
+import {getSubjectDescription, getImageUrl, createProgramPlan} from '../../service/openAIService';
 
 const HomePageCreatePath = (props) => {
 
     const [subject, setSubject] = useState(props.mainObj.sub2);
     const [isMagicClicked, setIsMagicClicked] = useState(false);
+    const [imageUrl, setImageUrl] = useState(null)
     const [isDescriptionClicked, setIsDescriptionClicked] = useState(false);
     const [description, setDescription] = useState();
+    const [useAi, setUseAi] = useState(false);
 
     const generateAgainDescription = async () => {
         await fetchData();
     }
 
+    const handleCheckboxChange = (event) => {
+        setUseAi(event.target.checked);
+    };
+
     // create dall E image
-    const createImg = () => {
+    const createImg = async () => {
         setIsMagicClicked(true);
+        const url = await getImageUrl(subject)
+        setImageUrl(url)
+        setIsMagicClicked(false);
     };
     
     const fetchData = async () => {
@@ -32,6 +41,16 @@ const HomePageCreatePath = (props) => {
     useEffect(() => {
         fetchData();
     }, [])
+
+    const makeStracture = async() => {
+        const programPlan = {
+            picture: {imageUrl},
+            goals: {description},
+            subject: {subject},
+            contentType: {useAi}
+        };
+        await createProgramPlan(programPlan)
+    };
 
     return (
         <React.Fragment>
@@ -54,15 +73,33 @@ const HomePageCreatePath = (props) => {
                             : 
                                 <VscDebugRestart onClick={generateAgainDescription} className={styles.generate_icon}></VscDebugRestart>}
                         </div>
-                        
+
+                        <div className={styles.checkbox_div}>
+                            <label>שימוש בבינה מלאכותית</label>
+
+                            <label className={styles.cont}>
+                                <input
+                                    type="checkbox"
+                                    checked={useAi}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <span></span>
+                            </label>
+                        </div>
 
                         <div className={styles.create_img_container}>
-                            <label>יצירת תמונה למסלול</label>
+                            {imageUrl === null ? 
+                                <label>יצירת תמונה למסלול</label>
+                            :
+                                <label>יצירת תמונה נוספת למסלול</label>}
                             <button className={styles.createPaint_btn} onClick={createImg}>
                                 <label>יצירה</label>
                                 <FaMagic className={`${styles.magic_icon} ${isMagicClicked ? styles.magic_icon_animation : ''}`} />              
                             </button>
                         </div>
+                        
+                        {imageUrl && <img className={styles.path_img} src={imageUrl} alt="alt image" />}
+
                     </div>
 
                     <img  className={styles.paint_img} src="/image.svg" alt="image" />
@@ -70,8 +107,9 @@ const HomePageCreatePath = (props) => {
             </div>
 
             <div className={styles.underBtn}>
-                <UnderButtons text='יצירת מסלול' back='/chooseSubject' forward='/structurePage'/>
+                <UnderButtons func = {makeStracture} text='יצירת מסלול' back='/chooseSubject' forward='/structurePage'/>
             </div>
+
         </React.Fragment>
     );
 };

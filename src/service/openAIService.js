@@ -1,4 +1,4 @@
-import { get } from './httpService'
+import { get, post } from './httpService'
 
 export async function getSubjects() {
     try {
@@ -26,3 +26,24 @@ export async function getSubjectDescription(subject) {
         console.log(error);
     }
 }
+
+export async function getImageUrl(subject) {
+    try {
+        const imageUrl = await get(`OpenAI/get/image/${subject}`);
+        return imageUrl;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function createProgramPlan(object) {
+    try {
+        const programPlan = await post(`ProgramPlan/create`, object);
+        console.log(programPlan);
+        return programPlan;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+

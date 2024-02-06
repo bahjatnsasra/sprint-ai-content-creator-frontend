@@ -7,9 +7,17 @@ const UnderButtons = (props) => {
 
     const navigate = useNavigate();
 
+    const CallFunction = async () => {
+        if(props.func)
+        {
+            await props.func()
+        }
+        navigate(props.forward)
+    }
+
     return <div className={styels.container}>
 
-            <button onClick={() => navigate(props.forward)} className={styels.move_btn}>
+            <button onClick={() => CallFunction} className={styels.move_btn}>
                 <IoIosArrowBack></IoIosArrowBack>
                 <label>{props.text}</label>
             </button>
