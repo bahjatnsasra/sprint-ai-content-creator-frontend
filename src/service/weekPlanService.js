@@ -1,4 +1,4 @@
-import { get } from './httpService'
+import { get, post } from './httpService'
 
 
 export async function getWeekPlan(id) {
