@@ -56,7 +56,7 @@ const ChooseSubjectEnd = (props) => {
                             value={subjects[0]}
                             onClick={(event) => {
                                 handleButtonClick(1);
-                                setRealSubject(event.target.value);
+                                props.updateProgramPlanData('subject',event.target.value);
                             }}
                         >
                             {subjects[0]}
@@ -67,7 +67,7 @@ const ChooseSubjectEnd = (props) => {
                             value={subjects[1]}
                             onClick={(event) => {
                                 handleButtonClick(2);
-                                setRealSubject(event.target.value);
+                                props.updateProgramPlanData('subject',event.target.value);
                             }}
                         >
                             {subjects[1]} 
@@ -78,7 +78,7 @@ const ChooseSubjectEnd = (props) => {
                             value={subjects[2]}
                             onClick={(event) => {
                                 handleButtonClick(3);
-                                setRealSubject(event.target.value);
+                                props.updateProgramPlanData('subject',event.target.value);
                             }}
                         >
                             {subjects[2]}

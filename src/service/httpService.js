@@ -1,20 +1,19 @@
 import axios from 'axios';
 
-const api = axios.create({
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
 
 
 export async function request(url, method, data = null) {
+  
   try {
+    
     const options = {
       method, 
-      data
+      headers : {
+        'Content-Type': 'application/json' 
+      }
     }
     if (data) {
-      options.data = {...data}
+      options['data'] = {...data}
     }
     const response = await axios(url,options)
     return response.data

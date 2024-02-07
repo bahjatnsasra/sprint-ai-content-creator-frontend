@@ -10,11 +10,12 @@ const UnderButtons = (props) => {
 
     
     const CallFunction = async () => {
-        if(props.programPlanData)
+        if(props.setProgramPlan)
         {
             const programPlan = await createProgramPlan(props.programPlanData)
             props.setProgramPlan(programPlan)
-            navigate(props.forward)
+            console.log(programPlan);
+            // navigate(props.forward)
         }else{
             navigate(props.forward)
         }
@@ -23,7 +24,7 @@ const UnderButtons = (props) => {
 
     return <div className={styels.container}>
 
-            <button onClick={() => CallFunction()} className={styels.move_btn}>
+            <button onClick={() => navigate(props.forward)} className={styels.move_btn}>
                 <IoIosArrowBack></IoIosArrowBack>
                 <label>{props.text}</label>
             </button>

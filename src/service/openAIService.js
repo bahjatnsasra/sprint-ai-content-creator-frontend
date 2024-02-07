@@ -30,8 +30,8 @@ export async function getSubjectDescription(subject) {
 
 export async function createProgramPlan(prpgramPlanObj) {
     try {
-        const programPlan = (await post(`ProgramPlan/create`,prpgramPlanObj)).object
-        return programPlan
+        const programPlan = (await post(`ProgramPlan/create`,prpgramPlanObj))
+        return programPlan.object
     } catch (error) {
         
     }
