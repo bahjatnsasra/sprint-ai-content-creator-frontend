@@ -39,8 +39,6 @@ function App() {
     setProgramPlan(programPlanDataDup)
 }
 
-  
-
   return (  
     <Router>
       <Routes>
