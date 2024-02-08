@@ -23,6 +23,7 @@ const HomePageCreatePath = (props) => {
     const createImg = async () => {
         setIsMagicClicked(true);
         const url = await getImageUrl(props.programPlan.subject)
+        console.log(url)
         props.updateProgramPlanData('picture',url)
         setIsMagicClicked(false);
     };
@@ -36,7 +37,7 @@ const HomePageCreatePath = (props) => {
     
     useEffect(() => {
         fetchData();
-    }, [])
+    }, [props.programPlan.picture])
 
 
     return (
@@ -56,7 +57,7 @@ const HomePageCreatePath = (props) => {
                         <div className={styles.textarea_container}>
                             <textarea value={props.programPlan.goals} onChange={ (event) => props.updateProgramPlanData('goals' ,event.target.value)} className={styles.description_textarea} placeholder='התלמידים יכירו את עולם יצירת התמונות בבינה מלאכותית, לימוד על סגנונות שונים באמנות וציור, פיתוח מיומנויות כתיבת פרומפטים לקבלת תוצאות רצויות' type='text'></textarea>
                             {isDescriptionClicked ? 
-                                <VscDebugRestart className={styles.generate_icon_loading}></VscDebugRestart>
+                                <VscDebugRestart onClick={fetchData} className={styles.generate_icon_loading}></VscDebugRestart>
                             : 
                                 <VscDebugRestart onClick={generateAgainDescription} className={styles.generate_icon}></VscDebugRestart>}
                         </div>

@@ -11,6 +11,7 @@ const StructurePage = (props) => {
 
     useEffect(() => {
         async function fetchProgramPlanData() {
+            console.log(props.programPlan)
             const programPlan = await createProgramPlan(props.programPlan)
             props.updateProgramPlanData('structure', programPlan.structure)
         }
@@ -38,9 +39,10 @@ const StructurePage = (props) => {
             :
                 <LoadingPopUp text='אנחנו מכינים לכם מתווה למסלול...'></LoadingPopUp>}
 
-                <div className={styles.underBtn}>
-                    <UnderButtons text='ליצירת היום הראשון' back='/homePageCreatePath' forward='/day1'/>
-                </div>
+                {props.programPlan.structure && 
+                    <div className={styles.underBtn}>
+                        <UnderButtons text='ליצירת היום הראשון' back='/homePageCreatePath' forward='/day1'/>
+                    </div>}
             </div>
     
 };
