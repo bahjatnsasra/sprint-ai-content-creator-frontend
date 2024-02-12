@@ -37,7 +37,7 @@ const HomePageCreatePath = (props) => {
     
     useEffect(() => {
         fetchData();
-    }, [props.programPlan.picture])
+    }, [])
 
 
     return (
@@ -80,7 +80,7 @@ const HomePageCreatePath = (props) => {
                                 <label>יצירת תמונה למסלול</label>
                             :
                                 <label>יצירת תמונה נוספת למסלול</label>}
-                            <button className={styles.createPaint_btn} onClick={() => createImg(props.programPlan.subject)}>
+                            <button className={styles.createPaint_btn} onClick={createImg}>
                                 <label>יצירה</label>
                                 <FaMagic className={`${styles.magic_icon} ${isMagicClicked ? styles.magic_icon_animation : ''}`} />              
                             </button>

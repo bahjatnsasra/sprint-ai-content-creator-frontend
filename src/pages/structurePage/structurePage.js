@@ -3,7 +3,7 @@ import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons';
 import PathData from '../../components/pathData/pathData';
 import { IoIosAlert } from "react-icons/io";
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { createProgramPlan } from '../../service/openAIService';
 import LoadingPopUp from '../../components/loadingPopUp/loadingPopUp';
 
@@ -14,6 +14,7 @@ const StructurePage = (props) => {
             console.log(props.programPlan)
             const programPlan = await createProgramPlan(props.programPlan)
             props.updateProgramPlanData('structure', programPlan.structure)
+            console.log(`updated data: ${props.programPlan}`)
         }
         fetchProgramPlanData()
     },[])
@@ -32,8 +33,9 @@ const StructurePage = (props) => {
                         <IoIosAlert className={styles.alert_icon}></IoIosAlert>
                         <label>באפשרותכם לערוך את תוכן המתווה</label>
                     </div>
-
+                    
                     <PathData data = {props.programPlan.structure}/>
+
                     <img src={props.programPlan.picture} alt='path image'></img>
                 </div>
             :

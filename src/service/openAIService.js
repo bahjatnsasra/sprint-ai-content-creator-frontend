@@ -33,7 +33,7 @@ export async function createProgramPlan(prpgramPlanObj) {
         const programPlan = (await post(`ProgramPlan/create`,prpgramPlanObj))
         return programPlan.object
     } catch (error) {
-        
+        console.log(error);
     }
 }
 export async function getImageUrl(subject) {
