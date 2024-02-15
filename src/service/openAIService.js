@@ -46,5 +46,15 @@ export async function getImageUrl(subject) {
 }
 
 
+export async function createStructure(structureInfo) {
+    try {
+        const structure = (await post(`OpenAI/create/structure`,structureInfo))
+        return structure
+    } catch (error) {
+        
+    }
+}
+
+
 
 

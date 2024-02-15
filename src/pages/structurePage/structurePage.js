@@ -7,30 +7,34 @@ import { useEffect, useState } from 'react';
 import { createProgramPlan } from '../../service/openAIService'
 
 const   StructurePage = (props) => {
+    const [programPlan, setProgramPlan] = useState(null);
 
     useEffect(() => {
-        async function fetchProgramPlanData() {
-            const programPlan = await createProgramPlan(props.programPlan)
-            props.updateProgramPlanData('structure', programPlan.structure)
+        const fetchProgramPlanData = async () => {
+            const data = await createProgramPlan(props.programPlan)
+            setProgramPlan(data)
+            console.log(programPlan);
+            console.log(data);
+            // props.updateProgramPlanData('structure', programPlan?.structure?  programPlan.structure: '' )
         }
         fetchProgramPlanData()
     },[])
     
-    return props.programPlan.structure && <div className={styles.all_page_container}>
+    return programPlan && <div className={styles.all_page_container}>
         <Navbar className={styles.navbar}/>
 
         <img className={styles.img} src="/procces3.svg" alt="image" />
 
         <div className={styles.container}>
             <h2>מתווה למסלול</h2>
-            <label>בנושא {props.programPlan.subject}</label>
+            <label>בנושא food</label>
 
             <div className={styles.messege_div}>
                 <IoIosAlert className={styles.alert_icon}></IoIosAlert>
                 <label>באפשרותכם לערוך את תוכן המתווה</label>
             </div>
 
-            <PathData data = {props.programPlan.structure}/>
+            {props.programPlan.structure && <PathData data = {props.programPlan.structure}/>}
         </div>
 
         <div className={styles.underBtn}>
