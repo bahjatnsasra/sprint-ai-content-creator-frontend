@@ -19,7 +19,7 @@ function App() {
   const [mainObj, setMainObj] = useState({sub1: '' , sub2: ''})
   const [programPlan, setProgramPlan] = useState({
     subject: '', 
-    structure : '',
+    structure : 'none',
     goals: '', 
     contentType: false, 
     picture: ''
@@ -38,8 +38,6 @@ function App() {
     programPlanDataDup[key] = value
     setProgramPlan(programPlanDataDup)
 }
-
-  
 
   return (  
     <Router>

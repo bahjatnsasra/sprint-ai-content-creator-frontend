@@ -2,7 +2,7 @@
     border-radius: 30px;
     padding: 25px;
     color: #6a6a6ac7;
-    font-size: 26px;
+    font-size: 23px;
     font-family: 'Assistant', sans-serif;
     display: flex;
     flex-direction: column;
@@ -12,6 +12,6 @@
     border: 2px solid rgba(182, 182, 182, 0.284);
     resize:none;
     height: auto;
-    min-height: 200px;
     overflow: hidden; 
+    width: 900px;
 }
