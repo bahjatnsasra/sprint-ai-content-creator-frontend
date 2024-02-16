@@ -4,18 +4,24 @@ import UnderButtons from '../../components/underButtons/underButtons';
 import PathData from '../../components/pathData/pathData';
 import { IoIosAlert } from "react-icons/io";
 import { useEffect, useState } from 'react';
-import { getSturctureAnswer } from '../../service/openAIService';
+import { getSturctureAnswer } from '../../service/geminiService';
 import LoadingPopUp from '../../components/loadingPopUp/loadingPopUp';
 
 const StructurePage = (props) => {
 
     const [structure, setStructure] = useState(null);
+    const subject = props.programPlan.subject;
+    const contentType = props.programPlan.contentType;
+    const goals = props.programPlan.goals;
 
     useEffect(() => {
-        const fetchProgramPlanData = async () => {
-            setStructure(await getSturctureAnswer())
+        console.log(subject)
+        console.log(contentType)
+        console.log(goals)
+        const fetchProgramPlanData = async (subject, contentType, goals) => {
+            setStructure(await getSturctureAnswer(subject, contentType, goals))
         }
-        fetchProgramPlanData()
+        fetchProgramPlanData(subject, contentType, goals)
     },[])
     
     return <div className={styles.all_page_container}>
@@ -35,7 +41,7 @@ const StructurePage = (props) => {
                     
                     <PathData data = {structure}/>
 
-                    <img src={props.programPlan.picture} alt='path image'></img>
+                    <img className={styles.path_img} src={props.programPlan.picture} alt='path image'></img>
                 </div>
             :
                 <LoadingPopUp text='אנחנו מכינים לכם מתווה למסלול...'></LoadingPopUp>}

@@ -57,7 +57,13 @@
     100% {
       transform: scale(1.2);
     }
-  }
+}
+
+.path_img{
+    margin-top: 15px;
+    border-radius: 20px;
+    width: 950px;
+}
 
 .underBtn{
     width: 100%;
