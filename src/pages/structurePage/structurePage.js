@@ -4,8 +4,8 @@ import UnderButtons from '../../components/underButtons/underButtons';
 import PathData from '../../components/pathData/pathData';
 import { IoIosAlert } from "react-icons/io";
 import { useEffect, useState } from 'react';
-import { getSturctureAnswer } from '../../service/geminiService';
 import LoadingPopUp from '../../components/loadingPopUp/loadingPopUp';
+import { generateProgramStructure } from '../../service/openAIService'
 
 const StructurePage = (props) => {
 
@@ -15,11 +15,9 @@ const StructurePage = (props) => {
     const goals = props.programPlan.goals;
 
     useEffect(() => {
-        console.log(subject)
-        console.log(contentType)
-        console.log(goals)
         const fetchProgramPlanData = async (subject, contentType, goals) => {
-            setStructure(await getSturctureAnswer(subject, contentType, goals))
+            setStructure(await generateProgramStructure(subject, contentType, goals))
+            props.updateProgramPlanData('structure',structure)
         }
         fetchProgramPlanData(subject, contentType, goals)
     },[])
