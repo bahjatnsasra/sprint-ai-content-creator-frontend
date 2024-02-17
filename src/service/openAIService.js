@@ -66,7 +66,7 @@ const openAiheaders = {
 const OpenAIGenerateProgramStructure = (subject, contentType, learn) => {
     let content = '';
     if(contentType === true) {
-        content = 'very important to add chat GPT, dall E, or Gemini to one task per day!';
+        content = 'very important to add conversion with chat GPT or Gemini, or creating image with dall E, to only one task per day!';
     }
     const prompt = {
         "model": "gpt-4",
