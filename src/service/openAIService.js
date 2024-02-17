@@ -103,7 +103,6 @@ export const generateProgramStructure = async (subject, contentType, learn) => {
         const promptData = OpenAIGenerateProgramStructure(subject, contentType, learn);
         const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
         const structure = responseData.data.choices[0].message.content;
-        console.log(structure);
         return structure;
     } catch (error) {
         throw error;
@@ -115,7 +114,6 @@ export const generateDay1 = async (struc) => {
         const promptData = day1Prompt(struc);
         const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
         const structure = responseData.data.choices[0].message.content;
-        console.log(structure);
         return structure;
     } catch (error) {
         throw error;
@@ -127,7 +125,6 @@ export const generateDay2 = async (struc) => {
         const promptData = day2Prompt(struc);
         const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
         const structure = responseData.data.choices[0].message.content;
-        console.log(structure);
         return structure;
     } catch (error) {
         throw error;
@@ -139,7 +136,6 @@ export const generateDay3 = async (struc) => {
         const promptData = day3Prompt(struc);
         const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
         const structure = responseData.data.choices[0].message.content;
-        console.log(structure);
         return structure;
     } catch (error) {
         throw error;
@@ -151,7 +147,6 @@ export const generateDay4 = async (struc) => {
         const promptData = day4Prompt(struc);
         const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
         const structure = responseData.data.choices[0].message.content;
-        console.log(structure);
         return structure;
     } catch (error) {
         throw error;
@@ -163,7 +158,6 @@ export const generateDay5 = async (struc) => {
         const promptData = day5Prompt(struc);
         const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
         const structure = responseData.data.choices[0].message.content;
-        console.log(structure);
         return structure;
     } catch (error) {
         throw error;

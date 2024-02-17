@@ -12,14 +12,11 @@ const ChooseSubject = (props) => {
         setSelectedButton(buttonIndex);
     };
 
-    useEffect(() => {
-        props.updateMainObj('', subject);
-    }, [subject]);
-
     const handleInputChange = (event) => {
         const inputValue = event.target.value;
         setSubject(inputValue);
-        props.updateProgramPlanData('subject',subject)
+        console.log(inputValue)
+        props.updateProgramPlanData('subject',inputValue)
         setInputError(inputValue === '');
     };
 
@@ -27,7 +24,8 @@ const ChooseSubject = (props) => {
         <React.Fragment>
             <Navbar />
             <div className={styles.container}>
-                <div>
+                
+                <div className={styles.img_div}>
                     <img className={styles.img} src="/procces1.svg" alt="image" />
                 </div>
 
