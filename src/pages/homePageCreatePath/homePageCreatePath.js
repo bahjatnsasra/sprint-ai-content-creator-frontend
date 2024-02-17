@@ -23,7 +23,6 @@ const HomePageCreatePath = (props) => {
     const createImg = async () => {
         setIsMagicClicked(true);
         const url = await getImageUrl(props.programPlan.subject)
-        console.log(url)
         props.updateProgramPlanData('picture',url)
         setIsMagicClicked(false);
     };

@@ -10,13 +10,13 @@ import LoadingPopUp from '../../components/loadingPopUp/loadingPopUp';
 const Day1 = (props) => {
 
     const [data, setData] = useState(null);
-    const structure = props.programPlan.structure;
 
     useEffect(() => {
-        const getData = async (structure) => {
-            setData(await generateDay1(structure))
+        const getData = async () => {
+            const day1Data = await generateDay1(props.programPlan.structure)
+            setData(day1Data)
         }
-        getData(structure)
+        getData()
     },[])
 
     return <div className={styles.all_page_container}>
@@ -33,7 +33,7 @@ const Day1 = (props) => {
                     <label>באפשרותכם לערוך את תוכן היום הראשון</label>
                 </div>
 
-                <PathData data = {structure}/>
+                <PathData data = {data}/>
             </div>
         :
             <LoadingPopUp text='אנחנו מכינים לכם פעילות ליום הראשון ...'></LoadingPopUp>}

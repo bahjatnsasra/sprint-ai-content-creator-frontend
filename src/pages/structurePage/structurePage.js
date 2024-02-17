@@ -16,8 +16,9 @@ const StructurePage = (props) => {
 
     useEffect(() => {
         const fetchProgramPlanData = async (subject, contentType, goals) => {
-            setStructure(await generateProgramStructure(subject, contentType, goals))
-            props.updateProgramPlanData('structure',structure)
+            const sturct = await generateProgramStructure(subject, contentType, goals)
+            setStructure(sturct)
+            props.updateProgramPlanData('structure',sturct)
         }
         fetchProgramPlanData(subject, contentType, goals)
     },[])

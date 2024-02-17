@@ -64,6 +64,10 @@ const openAiheaders = {
 
 // Function to generate the prompt data for OpenAI API
 const OpenAIGenerateProgramStructure = (subject, contentType, learn) => {
+    let content = '';
+    if(contentType === true) {
+        content = 'very important to add chat GPT, dall E, or Gemini to one task per day!';
+    }
     const prompt = {
         "model": "gpt-4",
         "messages": [{
@@ -75,7 +79,7 @@ const OpenAIGenerateProgramStructure = (subject, contentType, learn) => {
             The course should work on the following skills: independent learning, creativity, technological literacy, and critical thinking.
             On the third day, there is a class meeting for half an hour, and on the fifth and final day, there is a class meeting for an hour.
             You need to build a template of 5 days, with each day having a title, goal (one or two sentences), and headings of the tasks on that day (3-4 tasks). 
-            very important to add ${contentType} to one task per day! (remember that the children at the age of 8 so dont give then something hard). 
+            ${content} (remember that the children at the age of 8 so dont give then something hard). 
             (if you offer videos add link for that) On the fourth day, there is a task dedicated to preparing the learning presentation in front of the entire class. 
             Your topic is ${subject}.The path should teach students to understand ${learn} and create a product (give me ideas for types of products in the context of this project. 
             For example: list, poster, creating an image with an artificial intelligence tool, etc.).
@@ -93,6 +97,7 @@ const OpenAIGenerateProgramStructure = (subject, contentType, learn) => {
     return prompt;
 };
 
+
 export const generateProgramStructure = async (subject, contentType, learn) => {
     try {
         const promptData = OpenAIGenerateProgramStructure(subject, contentType, learn);
@@ -105,9 +110,57 @@ export const generateProgramStructure = async (subject, contentType, learn) => {
     }
 };
 
-export const generateDay1 = async (structure) => {
+export const generateDay1 = async (struc) => {
     try {
-        const promptData = day1Prompt(structure);
+        const promptData = day1Prompt(struc);
+        const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
+        const structure = responseData.data.choices[0].message.content;
+        console.log(structure);
+        return structure;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const generateDay2 = async (struc) => {
+    try {
+        const promptData = day2Prompt(struc);
+        const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
+        const structure = responseData.data.choices[0].message.content;
+        console.log(structure);
+        return structure;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const generateDay3 = async (struc) => {
+    try {
+        const promptData = day3Prompt(struc);
+        const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
+        const structure = responseData.data.choices[0].message.content;
+        console.log(structure);
+        return structure;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const generateDay4 = async (struc) => {
+    try {
+        const promptData = day4Prompt(struc);
+        const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
+        const structure = responseData.data.choices[0].message.content;
+        console.log(structure);
+        return structure;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const generateDay5 = async (struc) => {
+    try {
+        const promptData = day5Prompt(struc);
         const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
         const structure = responseData.data.choices[0].message.content;
         console.log(structure);

@@ -19,6 +19,7 @@ const ChooseSubject = (props) => {
     const handleInputChange = (event) => {
         const inputValue = event.target.value;
         setSubject(inputValue);
+        props.updateProgramPlanData('subject',subject)
         setInputError(inputValue === '');
     };
 

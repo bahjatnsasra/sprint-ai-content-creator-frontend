@@ -9,7 +9,7 @@ import LoadingPopUp from '../../components/loadingPopUp/loadingPopUp';
 const ChooseSubjectEnd = (props) => {
 
     const [selectedButton, setSelectedButton] = useState();
-    const [subject, setSubject] = useState();
+    const [subject, setSubject] = useState(props.mainObj.sub1);
     const [realSubject, setRealSubject] = useState();
     const [generateAgainClicked, setGenerateAgainClicked] = useState(false)
     const [subjects,setSubjects] = useState();
@@ -24,6 +24,11 @@ const ChooseSubjectEnd = (props) => {
         props.updateMainObj(subject,'')
     }, [subject])
 
+    useEffect(() => {
+        setSubject(props.mainObj.sub1)
+        props.updateMainObj(subject,realSubject)
+    }, [realSubject])
+
     const handleButtonClick = (buttonIndex) => {
         setSelectedButton(buttonIndex);
     };
@@ -33,11 +38,6 @@ const ChooseSubjectEnd = (props) => {
         await fetchData()
         setGenerateAgainClicked(false)
     }
-
-    useEffect(() => {
-        setSubject(props.mainObj.sub1)
-        props.updateMainObj(subject,realSubject)
-    }, [realSubject])
 
     return (
         <React.Fragment>

@@ -43,17 +43,17 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Homepage/>} />
-        <Route path="/chooseSubject" element={<ChooseSubject updateMainObj = {updateMainObj}/>} />
+        <Route path="/chooseSubject" element={<ChooseSubject updateProgramPlanData = {updateProgramPlanData} updateMainObj = {updateMainObj}/>} />
         <Route path="/genaratedSubjects" element={<GenaratedSubjects updateMainObj = {updateMainObj}/> } />
         <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd updateProgramPlanData = {updateProgramPlanData} mainObj = {mainObj}  updateMainObj = {updateMainObj}/>} />
         <Route path="/homePageCreatePath" element={<HomePageCreatePath updateProgramPlanData = {updateProgramPlanData}  programPlan = {programPlan} />} />
         <Route path="/structurePage" element={<StructurePage updateProgramPlanData = {updateProgramPlanData} programPlan = {programPlan} />} />
 
-        <Route path="/day1" element={<Day1/>} />
-        <Route path="/day2" element={<Day2/>} />
-        <Route path="/day3" element={<Day3/>} />
-        <Route path="/day4" element={<Day4/>} />
-        <Route path="/day5" element={<Day5/>} />
+        <Route path="/day1" element={<Day1 programPlan = {programPlan} />} />
+        <Route path="/day2" element={<Day2 programPlan = {programPlan} />} />
+        <Route path="/day3" element={<Day3 programPlan = {programPlan} />} />
+        <Route path="/day4" element={<Day4 programPlan = {programPlan} />} />
+        <Route path="/day5" element={<Day5 programPlan = {programPlan} />} />
 
         <Route path="/watchPath" element={<WatchPath/>} />
         
