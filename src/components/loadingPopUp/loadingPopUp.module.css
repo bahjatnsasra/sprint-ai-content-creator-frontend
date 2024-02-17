@@ -12,13 +12,14 @@
     overflow: hidden;
 }
 .box_container label{
-    color: #6A6A6A;
+    color: #797979;
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 500;
     margin-left: 150px;
     text-align: center;
     width: 600px;
     direction: rtl;
+    font-family: 'Rubik', sans-serif;
 }
 
 .loading_gif{

@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 .img{
@@ -41,17 +41,18 @@
     margin-right: 20px;
 }
 .input_container label{
-    color: #621E8A;
+    color: #946AB3;
     font-size: 26px;
-    font-weight: 500;
-    font-family: 'Assistant', sans-serif;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
     margin-right: 20px;
     margin-top: 30px;
 }
 .input_container input{
     color: #3c3c3c;
     font-size: 24px;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
     border-radius: 15px;
     border: 2px solid rgba(209, 209, 209, 0.371);
     padding: 10px;
@@ -99,7 +100,8 @@
 .description_textarea{
     color: #3c3c3c;
     font-size: 24px;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
     border-radius: 15px;
     border: none;
     padding: 10px;
@@ -121,10 +123,11 @@
 }
 
 .create_img_container{
-    width: 500px;
+    width: 550px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-top: -5px;
 }
 
 .createPaint_btn{
@@ -146,7 +149,7 @@
 }
 .createPaint_btn label{
     color: white;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
     margin-bottom: 30px;
     cursor: pointer;
 }

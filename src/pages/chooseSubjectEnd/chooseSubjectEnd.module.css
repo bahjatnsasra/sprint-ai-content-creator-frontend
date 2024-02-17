@@ -3,18 +3,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 .img{
     margin-top: 120px;
+    margin-bottom: 20px;
 }
 
 .title{
     color: #946AB3;
-    font-weight: 600;
-    font-size: 40px;
-    font-family: 'Assistant', sans-serif;
+    font-weight: 500;
+    font-size: 38px;
+    margin-right: 10px;
+    font-family: 'Rubik', sans-serif;
 }
 
 .top_container_buttons{
@@ -23,7 +25,7 @@
 }
 
 .buttons_container{
-    margin-top: 30px;
+    margin-top: 20px;
     gap: 40px;
     display: flex;
     flex-direction: row;
@@ -33,7 +35,7 @@
 
 .btn{
     color: #946AB3;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 32px;
     border-radius: 20px;
     border: none;
@@ -43,7 +45,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     cursor: pointer;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 .btn:hover{
     background-color: rgba(243, 242, 247, 0.478);
@@ -56,12 +58,12 @@
     border: none;
     padding: 20px;
     width: 300px;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 28px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     background-color: white;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: center;

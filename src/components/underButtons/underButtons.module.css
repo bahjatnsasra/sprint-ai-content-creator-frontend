@@ -7,7 +7,7 @@
     height: 100px;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 .move_btn{
@@ -27,7 +27,7 @@
     color: white;
     font-size: 25px;
     font-weight: 700;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 .move_btn label{
     cursor: pointer;
@@ -48,6 +48,6 @@
     background-color: #ffffff;
     color: #8FCB9C;
     font-size: 35px;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

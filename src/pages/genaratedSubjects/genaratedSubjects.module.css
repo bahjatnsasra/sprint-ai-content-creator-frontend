@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 .img{
@@ -13,15 +13,15 @@
 .title{
     margin-top: 50px;
     color: #946AB3;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 40px;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
     margin-right: 20px;
     margin-bottom: -15px;
 }
 
 .options_label{
-    color: #621E8A;
+    color: #946AB3;
     font-size: 24px;
     direction: rtl;
     margin-right: 20px;
@@ -44,7 +44,7 @@
 
 .btn{
     color: #946AB3;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 27px;
     border-radius: 20px;
     border: none;
@@ -54,7 +54,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     background-color: white;
     cursor: pointer;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
     margin: 5px;
 }
 .btn:hover{
@@ -68,12 +68,12 @@
     border: none;
     padding: 20px;
     width: 300px;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 28px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     background-color: white;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: center;
