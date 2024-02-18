@@ -29,8 +29,10 @@ const HomePageCreatePath = (props) => {
     
     const fetchData = async () => {
         setIsDescriptionClicked(true);
-        const data = await getSubjectDescription(props.programPlan.subject);
-        props.updateProgramPlanData('goals',data)
+        if(props.programPlan.subject){
+            const data = await getSubjectDescription(props.programPlan.subject);
+            props.updateProgramPlanData('goals',data)
+        }
         setIsDescriptionClicked(false);
     };
     

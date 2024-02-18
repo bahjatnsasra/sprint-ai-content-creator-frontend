@@ -3,28 +3,27 @@ import Navbar from '../../components/navbar/navbar';
 import UnderButtons from '../../components/underButtons/underButtons';
 import PathData from '../../components/pathData/pathData';
 import { IoIosAlert } from "react-icons/io";
-import { useEffect, useState } from 'react';
-import { generateDay2 } from '../../service/openAIService';
+import {  generateDay3 } from '../../service/openAIService';
 import LoadingPopUp from '../../components/loadingPopUp/loadingPopUp';
+import { createDay } from '../../service/daysService'
+
 
 const Day2= (props) => {
 
-    const [data, setData] = useState(null);
+    
+    const createDay3 = async () => {
+        const day3Data = await generateDay3(props.programPlan.structure)
+        props.updateDaysList(3, day3Data)
+        await createDay(props.weekPlanId,day3Data)
+    }
 
-    useEffect(() => {
-        const getData = async () => {
-            const day2Data = await generateDay2(props.programPlan.structure)
-            setData(day2Data)
-        }
-        getData()
-    },[])
 
     return <div className={styles.all_page_container}>
         <Navbar className={styles.navbar}/>
 
         <img className={styles.img} src="/day2.svg" alt="image" />
         
-        {data ? 
+        {props.daysList[2] ? 
             <div className={styles.container}>
                 <h2 style={{marginBottom: '20px'}}>צפו ביום השני</h2>
 
@@ -33,14 +32,14 @@ const Day2= (props) => {
                     <label>באפשרותכם לערוך את תוכן היום השני</label>
                 </div>
 
-                <PathData data = {data}/>
+                <PathData data = {props.daysList[2].tasks}/>
             </div>
         :
             <LoadingPopUp text='אנחנו מכינים לכם פעילות ליום השני ...'></LoadingPopUp>}
 
-        {data &&
+        {props.daysList[2] &&
             <div className={styles.underBtn}>
-                    <UnderButtons text='ליצירת היום השלישי' back='/day1' forward='/day3'/>
+                    <UnderButtons buttonFunc = {createDay3} text='ליצירת היום השלישי' back='/day1' forward='/day3'/>
             </div>}
 
     </div>

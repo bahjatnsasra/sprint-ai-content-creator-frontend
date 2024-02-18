@@ -112,9 +112,9 @@ export const generateProgramStructure = async (subject, contentType, learn) => {
 export const generateDay1 = async (struc) => {
     try {
         const promptData = day1Prompt(struc);
-        const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
-        const structure = responseData.data.choices[0].message.content;
-        return structure;
+        const responseData = (await axios.post(OpenAIUrl, promptData, { headers: openAiheaders })).data;
+        const dayData = JSON.parse(responseData.choices[0].message.function_call.arguments)
+        return dayData;
     } catch (error) {
         throw error;
     }
@@ -123,9 +123,9 @@ export const generateDay1 = async (struc) => {
 export const generateDay2 = async (struc) => {
     try {
         const promptData = day2Prompt(struc);
-        const responseData = await axios.post(OpenAIUrl, promptData, { headers: openAiheaders });
-        const structure = responseData.data.choices[0].message.content;
-        return structure;
+        const responseData = (await axios.post(OpenAIUrl, promptData, { headers: openAiheaders })).data;
+        const dayData = JSON.parse(responseData.choices[0].message.function_call.arguments)
+        return dayData;
     } catch (error) {
         throw error;
     }

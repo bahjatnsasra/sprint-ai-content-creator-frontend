@@ -18,27 +18,37 @@ import WatchPath from './pages/watchPath/watchPath';
 function App() {
   const [mainObj, setMainObj] = useState({sub1: '' , sub2: ''})
   const [programPlan, setProgramPlan] = useState({
+    id: '',
     subject: '', 
     structure : 'none',
     goals: '', 
     contentType: false, 
     picture: ''
   })
-  console.log(programPlan);
+  const [weekPlanId, setWeekPlanId] = useState()
+  const [daysList, setDaysList] = useState([])
 
+  function updateDaysList(index, object) {
+    const daysListDup = [...daysList]
+    daysListDup[index] = object
+    setDaysList(daysListDup)
+}
+
+
+  
   function updateMainObj(sub1, sub2) {
     const newMainObj = {...mainObj}
     if(sub1) {newMainObj.sub1 = sub1}
     if(sub2) {newMainObj.sub2 = sub2}
     setMainObj(newMainObj)
   }
-
   function updateProgramPlanData(key, value) {
     const programPlanDataDup = {...programPlan}
     programPlanDataDup[key] = value
     setProgramPlan(programPlanDataDup)
 }
 
+console.log(programPlan);
   return (  
     <Router>
       <Routes>
@@ -47,13 +57,13 @@ function App() {
         <Route path="/genaratedSubjects" element={<GenaratedSubjects updateMainObj = {updateMainObj}/> } />
         <Route path="/chooseSubjectEnd" element={<ChooseSubjectEnd updateProgramPlanData = {updateProgramPlanData} mainObj = {mainObj}  updateMainObj = {updateMainObj}/>} />
         <Route path="/homePageCreatePath" element={<HomePageCreatePath updateProgramPlanData = {updateProgramPlanData}  programPlan = {programPlan} />} />
-        <Route path="/structurePage" element={<StructurePage updateProgramPlanData = {updateProgramPlanData} programPlan = {programPlan} />} />
+        <Route path="/structurePage" element={<StructurePage updateDaysList = {updateDaysList} weekPlanId = {weekPlanId} setWeekPlanId = {setWeekPlanId} updateProgramPlanData = {updateProgramPlanData} programPlan = {programPlan} />} />
 
-        <Route path="/day1" element={<Day1 programPlan = {programPlan} />} />
-        <Route path="/day2" element={<Day2 programPlan = {programPlan} />} />
-        <Route path="/day3" element={<Day3 programPlan = {programPlan} />} />
-        <Route path="/day4" element={<Day4 programPlan = {programPlan} />} />
-        <Route path="/day5" element={<Day5 programPlan = {programPlan} />} />
+        <Route path="/day1" element={<Day1 weekPlanId = {weekPlanId} updateDaysList = {updateDaysList} daysList = {daysList} programPlan = {programPlan} />} />
+        <Route path="/day2" element={<Day2 weekPlanId = {weekPlanId} updateDaysList = {updateDaysList} daysList = {daysList} programPlan = {programPlan} />} />
+        <Route path="/day3" element={<Day3 weekPlanId = {weekPlanId} updateDaysList = {updateDaysList} daysList = {daysList} programPlan = {programPlan} />} />
+        <Route path="/day4" element={<Day4 weekPlanId = {weekPlanId} updateDaysList = {updateDaysList} daysList = {daysList} programPlan = {programPlan} />} />
+        <Route path="/day5" element={<Day5 weekPlanId = {weekPlanId} updateDaysList = {updateDaysList} daysList = {daysList} programPlan = {programPlan} />} />
 
         <Route path="/watchPath" element={<WatchPath/>} />
         

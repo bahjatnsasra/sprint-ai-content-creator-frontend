@@ -1,13 +1,15 @@
-import { get, post } from './httpService'
+import { post } from './httpService'
 
 
-export async function getWeekPlan(id) {
+export async function createWeekPlan(id) {
     try {
-        const weekPlan = await get(`WeekPlan/${id}/get`)
-        console.log(weekPlan);
+        const weekPlanId = await post(`WeekPlan/${id}/create`)
+        return weekPlanId
     } catch (error) {
         console.log(error);
     }
 }
+
+
 
 
