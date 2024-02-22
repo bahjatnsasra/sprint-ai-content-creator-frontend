@@ -36,7 +36,7 @@ const StructurePage = (props) => {
 
     const createDay1 = async () => {
         const day1Data = await generateDay1(props.programPlan.structure)
-        props.updateDaysList(1, day1Data)
+        props.updateDaysList(0, day1Data)
         await createDay(props.weekPlanId,day1Data)
     }
     return <div className={styles.all_page_container}>

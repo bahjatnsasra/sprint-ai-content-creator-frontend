@@ -13,7 +13,7 @@ const Day2= (props) => {
     
     const createDay3 = async () => {
         const day3Data = await generateDay3(props.programPlan.structure)
-        props.updateDaysList(3, day3Data)
+        props.updateDaysList(2, day3Data)
         await createDay(props.weekPlanId,day3Data)
     }
 
@@ -23,7 +23,7 @@ const Day2= (props) => {
 
         <img className={styles.img} src="/day2.svg" alt="image" />
         
-        {props.daysList[2] ? 
+        {props.daysList[1] ? 
             <div className={styles.container}>
                 <h2 style={{marginBottom: '20px'}}>צפו ביום השני</h2>
 
@@ -32,12 +32,12 @@ const Day2= (props) => {
                     <label>באפשרותכם לערוך את תוכן היום השני</label>
                 </div>
 
-                <PathData data = {props.daysList[2].tasks}/>
+                <PathData data = {props.daysList[1].tasks}/>
             </div>
         :
             <LoadingPopUp text='אנחנו מכינים לכם פעילות ליום השני ...'></LoadingPopUp>}
 
-        {props.daysList[2] &&
+        {props.daysList[1] &&
             <div className={styles.underBtn}>
                     <UnderButtons buttonFunc = {createDay3} text='ליצירת היום השלישי' back='/day1' forward='/day3'/>
             </div>}
