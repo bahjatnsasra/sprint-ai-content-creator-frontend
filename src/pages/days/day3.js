@@ -10,7 +10,7 @@ import { createDay } from '../../service/daysService'
 const Day3 = (props) => {
     const createDay4 = async () => {
         const day4Data = await generateDay4(props.programPlan.structure)
-        props.updateDaysList(4, day4Data)
+        props.updateDaysList(3, day4Data)
         await createDay(props.weekPlanId,day4Data)
     }
 
