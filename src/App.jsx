@@ -32,6 +32,7 @@ function App() {
     const daysListDup = [...daysList]
     daysListDup[index] = object
     setDaysList(daysListDup)
+    console.log(daysListDup);
 }
 
 
@@ -65,7 +66,7 @@ console.log(programPlan);
         <Route path="/day4" element={<Day4 weekPlanId = {weekPlanId} updateDaysList = {updateDaysList} daysList = {daysList} programPlan = {programPlan} />} />
         <Route path="/day5" element={<Day5 weekPlanId = {weekPlanId} updateDaysList = {updateDaysList} daysList = {daysList} programPlan = {programPlan} />} />
 
-        <Route path="/watchPath" element={<WatchPath/>} />
+        <Route path="/watchPath" daysList = {daysList} element={<WatchPath/>} />
         
       </Routes>
     </Router>

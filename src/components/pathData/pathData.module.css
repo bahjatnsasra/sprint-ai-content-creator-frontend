@@ -1,17 +1,32 @@
-.container{
+.container {
     border-radius: 30px;
-    padding: 25px;
-    color: #6a6a6ac7;
-    font-size: 21px;
     font-family: 'Rubik', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    direction: rtl;
     border: 2px solid rgba(182, 182, 182, 0.284);
-    resize:none;
-    height: auto;
-    overflow: hidden; 
     width: 900px;
+    padding: 25px;
+}
+
+.container h1{
+    color: #555555c7;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.container textarea {
+    border: none;
+    width: 900px;
+    min-height: 300px;
+    height: auto;
+    resize: none;
+    font-family: 'Rubik', sans-serif;
+    color: #6a6a6ac7;
+    font-size: 21px;
+}
+
+
+textarea:focus, input:focus{
+    outline: none;
 }

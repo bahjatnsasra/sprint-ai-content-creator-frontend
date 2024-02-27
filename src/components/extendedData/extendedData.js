@@ -15,6 +15,7 @@ const ExtendedData = (props) => {
 
             {open ? 
                 <div className={styels.data_container}>
+                    {props.title && <h2>{props.title}</h2>}
                     {props.text}
                 </div>
             : null}
