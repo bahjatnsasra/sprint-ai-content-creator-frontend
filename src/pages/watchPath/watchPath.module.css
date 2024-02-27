@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Rubik', sans-serif;
 }
 .container{
     direction: rtl;
@@ -21,7 +22,7 @@
     color: #946AB3;
     font-size: 48px;
     font-weight: 700;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
     margin-bottom: 20px;
     margin-right: 20px;
 }
@@ -31,13 +32,14 @@
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
-    width: 100%;
     height: 100px;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
     position: fixed;
-    bottom: 0;
 }
 .move_btn{
     cursor: pointer;
@@ -56,7 +58,7 @@
     color: white;
     font-size: 25px;
     font-weight: 700;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
     direction: rtl;
 }
 .move_btn label{
@@ -78,7 +80,7 @@
     background-color: #ffffff;
     color: #8FCB9C;
     font-size: 35px;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Rubik', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 

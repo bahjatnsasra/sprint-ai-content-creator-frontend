@@ -16,10 +16,10 @@
     justify-content: center;
     align-items: center;
     direction: rtl;
-    position: relative;
     width: 100%;
     margin-top: 20px;
     gap: 200px;
+    position: relative;
 }
 
 .paint_img{
@@ -153,24 +153,25 @@
     margin-bottom: 30px;
     cursor: pointer;
 }
-@keyframes magic {
-    0% {
-      transform: scale(1) rotate(0deg);
+
+@keyframes magicEffect {
+    0%, 100% {
+        transform: scale(1) rotate(0);
     }
-    50% {
-      transform: scale(1.2) rotate(180deg);
+    75% {
+        transform: scale(1) rotate(40deg);
     }
-    100% {
-      transform: scale(1) rotate(360deg);
+    25% { 
+        transform: scale(1) rotate(-80deg);
     }
-  }
+ }
   
   .magic_icon {
     margin-left: 15px;
   }
   .magic_icon_animation {
     margin-left: 15px;
-    animation: magic 2s infinite ease-in-out;
+    animation: magicEffect 2s infinite ease-in-out;
   }
 
 .path_img{
@@ -179,13 +180,15 @@
     height: 280px;
     border-radius: 15px;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
   
 
 .underBtn{
-    /* position: absolute;
-    bottom: 0px; */
+    position: absolute;
+    bottom: 0px;
     width: 100%;
+    position: fixed;
 }
 
 
