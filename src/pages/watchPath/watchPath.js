@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './watchPath.module.css';
 import Navbar from '../../components/navbar/navbar';
 import { useNavigate } from "react-router-dom";
@@ -10,10 +10,16 @@ const WatchPath = (props) => {
 
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
+    const [dayList, setDayList] = useState(null)
 
     const openGoogleDoc = () => {
         setLoading(true);
     };
+
+    useEffect(() => {
+        setDayList(props.daysList)
+        console.log(props.daysList)
+    }, [])
 
     return <div className={styles.all_page_container}>
         <Navbar className={styles.navbar}/>
@@ -23,33 +29,34 @@ const WatchPath = (props) => {
         <div className={styles.container}>
             <h2>צפו במסלול המפורט</h2>
 
+            {dayList &&
             <div className={styles.days_container}>
                 <ExtendedData
-                    title={props.daysList[0].title}
-                    text={props.daysList[0].data}
+                    title={dayList[0].title}
+                    text={dayList[0].tasks}
                     day='יום ראשון'
                 ></ExtendedData>
                 <ExtendedData
-                    title={props.daysList[1].title}
-                    text={props.daysList[1].data}
+                    title={dayList[1].title}
+                    text={dayList[1].tasks}
                     day='יום שני'
                 ></ExtendedData>
                 <ExtendedData
-                    title={props.daysList[2].title}
-                    text={props.daysList[2].data}
+                    title={dayList[2].title}
+                    text={dayList[2].tasks}
                     day='יום שלישי'
                 ></ExtendedData>
                 <ExtendedData
-                    title={props.daysList[3].title}
-                    text={props.daysList[3].data}
+                    title={dayList[3].title}
+                    text={dayList[3].tasks}
                     day='יום רביעי'
                 ></ExtendedData>
                 <ExtendedData
-                    title={props.daysList[4].title}
-                    text={props.daysList[4].data}
+                    title={dayList[4].title}
+                    text={dayList[4].tasks}
                     day='יום חמישי'
                 ></ExtendedData>
-            </div>
+            </div>}
         </div>
 
         <div className={styles.underBtn_container}>

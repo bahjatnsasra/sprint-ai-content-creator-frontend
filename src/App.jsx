@@ -66,7 +66,7 @@ console.log(programPlan);
         <Route path="/day4" element={<Day4 weekPlanId = {weekPlanId} updateDaysList = {updateDaysList} daysList = {daysList} programPlan = {programPlan} />} />
         <Route path="/day5" element={<Day5 weekPlanId = {weekPlanId} updateDaysList = {updateDaysList} daysList = {daysList} programPlan = {programPlan} />} />
 
-        <Route path="/watchPath" daysList = {daysList} element={<WatchPath/>} />
+        <Route path="/watchPath" element={<WatchPath daysList = {daysList}/>} />
         
       </Routes>
     </Router>
