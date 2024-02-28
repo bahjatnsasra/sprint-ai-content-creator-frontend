@@ -32,7 +32,7 @@ const Day2= (props) => {
                     <label>באפשרותכם לערוך את תוכן היום השני</label>
                 </div>
 
-                <PathData data = {props.daysList[1].tasks}/>
+                <PathData title = {props.daysList[1].title} data = {props.daysList[1].tasks}/>
             </div>
         :
             <LoadingPopUp text='אנחנו מכינים לכם פעילות ליום השני ...'></LoadingPopUp>}

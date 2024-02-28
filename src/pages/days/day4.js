@@ -11,7 +11,7 @@ import { createDay } from '../../service/daysService'
 const Day4 = (props) => {
     const createDay5 = async () => {
         const day5Data = await generateDay5(props.programPlan.structure)
-        props.updateDaysList(5, day5Data)
+        props.updateDaysList(4, day5Data)
         await createDay(props.weekPlanId,day5Data)
     }
 
@@ -21,7 +21,7 @@ const Day4 = (props) => {
 
         <img className={styles.img} src="/day4.svg" alt="image" />
         
-        {props.daysList[4] ? 
+        {props.daysList[3] ? 
             <div className={styles.container}>
                 <h2 style={{marginBottom: '20px'}}>צפו ביום הרביעי</h2>
 
@@ -30,12 +30,12 @@ const Day4 = (props) => {
                     <label>באפשרותכם לערוך את תוכן היום הרביעי</label>
                 </div>
 
-                <PathData data = {props.daysList[4].tasks}/>
+                <PathData title = {props.daysList[3].title} data = {props.daysList[3].tasks}/>
             </div>
         :
             <LoadingPopUp text='אנחנו מכינים לכם פעילות ליום הרביעי ...'></LoadingPopUp>}
 
-        {props.daysList[4] &&
+        {props.daysList[3] &&
             <div className={styles.underBtn}>
                     <UnderButtons buttonFunc = {createDay5} text='ליצירת היום החמישי' back='/day3' forward='/day5'/>
             </div>}

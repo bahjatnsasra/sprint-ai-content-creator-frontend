@@ -25,28 +25,28 @@ const WatchPath = (props) => {
 
             <div className={styles.days_container}>
                 <ExtendedData
+                    title={props.daysList[0].title}
+                    text={props.daysList[0].data}
+                    day='יום ראשון'
+                ></ExtendedData>
+                <ExtendedData
                     title={props.daysList[1].title}
                     text={props.daysList[1].data}
-                    day='יום ראשון'
+                    day='יום שני'
                 ></ExtendedData>
                 <ExtendedData
                     title={props.daysList[2].title}
                     text={props.daysList[2].data}
-                    day='יום שני'
+                    day='יום שלישי'
                 ></ExtendedData>
                 <ExtendedData
                     title={props.daysList[3].title}
                     text={props.daysList[3].data}
-                    day='יום שלישי'
+                    day='יום רביעי'
                 ></ExtendedData>
                 <ExtendedData
                     title={props.daysList[4].title}
                     text={props.daysList[4].data}
-                    day='יום רביעי'
-                ></ExtendedData>
-                <ExtendedData
-                    title={props.daysList[5].title}
-                    text={props.daysList[5].data}
                     day='יום חמישי'
                 ></ExtendedData>
             </div>

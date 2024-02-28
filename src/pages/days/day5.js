@@ -13,7 +13,7 @@ const Day5 = (props) => {
 
         <img className={styles.img} src="/day5.svg" alt="image" />
         
-        {props.daysList[5] ? 
+        {props.daysList[4] ? 
             <div className={styles.container}>
                 <h2 style={{marginBottom: '20px'}}>צפו ביום החמישי</h2>
 
@@ -22,12 +22,12 @@ const Day5 = (props) => {
                     <label>באפשרותכם לערוך את תוכן היום החמישי</label>
                 </div>
 
-                <PathData data = {props.daysList[5].tasks}/>
+                <PathData title = {props.daysList[4].title} data = {props.daysList[4].tasks}/>
             </div>
         :
             <LoadingPopUp text='אנחנו מכינים לכם פעילות ליום החמישי ...'></LoadingPopUp>}
 
-        {props.daysList[5] &&
+        {props.daysList[4] &&
             <div className={styles.underBtn}>
                     <UnderButtons text='לצפיה במסלול הכולל' back='/day4' forward='/watchPath'/>
             </div>}
