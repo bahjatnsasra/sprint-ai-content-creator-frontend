@@ -20,10 +20,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) f
 ---
 
 ## Pictures of the project
-![Screenshot 2024-03-13 101307](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/a8b29f33-df17-42a6-ac12-747075d9f019)
-![Screenshot 2024-03-13 101233](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/596619cb-6e9a-42ed-a060-1e23a5b68da1)
-![Screenshot 2024-03-13 101205](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/501d390e-52ca-407b-afe9-e75298450dd9)
-![Screenshot 2024-03-13 101125](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/975f0b57-a72c-4331-a7aa-33b120ccce06)
-![Screenshot 2024-03-13 101052](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/c5e72e01-7c18-45fb-a172-62cfb71ae54f)
-![Screenshot 2024-03-13 101000](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/ac96ea15-983f-4b71-b961-0e169e9877eb)
-![Screenshot 2024-03-13 101029](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/f58bb93f-6cdf-4a18-8f8a-d532e5ac7afe)
+
+![Screenshot 2024-03-13 101029](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/8dd3ef45-6531-4039-8c25-bf3e18eacd7c)
+![Screenshot 2024-03-13 101000](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/74ec1e4f-1a1e-4219-84f4-72a6819531e9)
+![Screenshot 2024-03-13 101052](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/c663a4e7-88be-44b9-a8cf-6b3f40b5ccb4)
+![Screenshot 2024-03-13 101125](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/7314f62d-cbdc-4ce7-a2fd-2a467480f3e0)
+![Screenshot 2024-03-13 101205](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/5106b4da-b6f2-4133-a3fd-3f9b620210fb)
+![Screenshot 2024-03-13 101233](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/c574bc67-57af-4cbb-9571-414edd26ded4)
+![Screenshot 2024-03-13 101307](https://github.com/bahjatnsasra/sprint-ai-content-creator-frontend/assets/134833213/21d9b760-66c9-4384-859b-59855691537f)
